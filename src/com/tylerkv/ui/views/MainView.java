@@ -4,16 +4,20 @@ package com.tylerkv.ui.views;
 // one panel is the static side bar
 // the other is the dynamic card layout list view
 
+import com.tylerkv.application.utilities.ListDriver;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class MainView extends JPanel {
     private CardLayout cardLayout;
     private JFrame parentFrame;
-    private SideBarView sideBarView;
+    private ShoppingListView shoppingListView;
+    private ListDriver listDriver;
 
-    public MainView(JFrame parentFrame) {
+    public MainView(JFrame parentFrame, ListDriver listDriver) {
         this.parentFrame = parentFrame;
+        this.listDriver = listDriver;
         initMainView();
     }
 
@@ -29,6 +33,9 @@ public class MainView extends JPanel {
 
     private void initPanels() {
         // Init list details panels here
+        shoppingListView = new ShoppingListView(this, listDriver);
+
+        this.add(shoppingListView);
     }
 
     public void showPanel(String panelName) {

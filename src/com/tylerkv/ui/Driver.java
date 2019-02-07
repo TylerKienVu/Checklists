@@ -24,13 +24,15 @@ public class Driver {
     }
 
     public void test() {
-        mainFrame = new MainFrame(this);
+        currentUser = new ListUser("Tyler", "password");
+        listDriver = new ListDriver(currentUser);
+        mainFrame = new MainFrame(this, listDriver);
     }
 
     public void login(String username, String password) {
         this.initAppInstance(username, password);
         loginFrame.dispose();
-        mainFrame = new MainFrame(this);
+        mainFrame = new MainFrame(this, this.listDriver);
     }
 
     private void initAppInstance(String username, String password) {

@@ -1,5 +1,6 @@
 package com.tylerkv.ui.frames;
 
+import com.tylerkv.application.utilities.ListDriver;
 import com.tylerkv.ui.Driver;
 import com.tylerkv.ui.views.MainView;
 import com.tylerkv.ui.views.SideBarView;
@@ -8,10 +9,12 @@ import javax.swing.*;
 import java.awt.*;
 
 public class MainFrame extends JFrame{
-    private Driver driver;
+    private Driver guiDriver;
+    private ListDriver listDriver;
 
-    public MainFrame(Driver driver) {
-        this.driver = driver;
+    public MainFrame(Driver guiDriver, ListDriver listDriver) {
+        this.guiDriver = guiDriver;
+        this.listDriver = listDriver;
         this.initFrame();
         this.initViews();
     }
@@ -20,16 +23,16 @@ public class MainFrame extends JFrame{
         this.setTitle("Checklists Application");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
-        this.setLayout(new GridLayout(1,2));
+        this.setLayout(new BorderLayout());
         this.setResizable(false);
     }
 
     private void initViews() {
-        MainView mainView = new MainView(this);
+        MainView mainView = new MainView(this, listDriver);
         SideBarView sideBarView = new SideBarView(this);
 
-        this.add(sideBarView);
-        this.add(mainView);
+        this.add(sideBarView, BorderLayout.WEST);
+        this.add(mainView, BorderLayout.CENTER);
         this.pack();
     }
 }
