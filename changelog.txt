@@ -1,0 +1,74 @@
+Changes I decided to make to design:
+
+	// General Changes
+
+		- Used Abstract Class instead of Interface for "List" and "ListItem"	
+
+	// List
+
+		- changed owner to use ListUser
+		- changed editListName to setListName
+		- changed addItem and deleteItem parameters to take in ListItem
+		- changed addUser and setOwner parameters to take in ListUser
+		- added list as attribute to store ListItems
+		- added deleteUser method
+		- changed type of listType from String to ListType (Enumeration)
+		- changed method name pruneListItems to clearFinishedListItems
+		- added toggleItem() method
+
+	// ListItem
+
+		- took away option of pending status for status attribute
+		- using enum Status for status attribute
+		- changed listItemType to use enum ListType
+		- added method toggleComplete()
+
+	// Shopping List
+
+		- took away shoppingList attribute because the list will be in the abstract class List
+
+	// ShoppingListItem
+
+		- added quantity attribute
+		- added setters and getters for quantity
+
+	// ToDoListItem
+		
+		- changed startDate and endDate type from Date to LocalDateTime
+		- taking away feature of calcluating priority by due date. gonna show list items in order by due date and then priority will take precedence after that
+		- removed method calculateItemPriority
+		- added getDaysUntilDue()
+		- added isOverDue()
+
+
+	// ToDoList
+
+		- changed calculateListPriority to calcualteListOrder
+
+	// GoalList
+
+		- took away goalItems because it is implemented by List
+		- took away methods because all of the methods for GoalList are derived from List
+
+	// GoalListItem
+
+		- changed child to children to represent attribute better
+
+	// TeamListItem
+
+		- added itemPriority attribute for spec requirement
+		- added deadline for spec req
+		- took away goalItems because it doesn't match spec
+
+	// ListDriver
+
+		- Added owner attribute for ListUser
+		- Added a delete method for every list type except goal
+		- Added attribute for enabledLists
+		- took away maxUsers and statusNames because not needed
+		- added a toggleList() method to enable or disable a list type
+		- added cleanAllLists() method to get rid of items completed for 24 hours 
+
+	// ListSettings
+
+		- deleted this class entirely because only useful attribute is enabledLists and I just added that to the ListDriver as an attribute
