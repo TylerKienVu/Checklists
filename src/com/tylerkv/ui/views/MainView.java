@@ -35,7 +35,7 @@ public class MainView extends JPanel {
         // Init list details panels here
         shoppingListView = new ShoppingListView(this, listDriver);
 
-        this.add(shoppingListView);
+        this.add(shoppingListView, "SHOPPING");
     }
 
     public void showPanel(String panelName) {

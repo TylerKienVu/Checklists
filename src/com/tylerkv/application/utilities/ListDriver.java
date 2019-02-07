@@ -130,6 +130,21 @@ public class ListDriver {
     }
 
     public void deleteList(String listName, ListType listType) {
+        if (listType == ListType.GOAL) {
+            this.setGoalList(null);
+        }
+        ArrayList<? extends List> listOfLists = this.getListsOfType(listType);
+
+        for(int i = 0; i < listOfLists.size(); i++) {
+            if (listOfLists.get(i).getListName().equals(listName)) {
+                listOfLists.remove(i);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("The list (" + listName + ") does not exist");
+    }
+
+    private ArrayList<? extends List> getListsOfType(ListType listType) {
         ArrayList<? extends List> listOfLists;
         switch(listType) {
             case SHOPPING:
@@ -139,22 +154,14 @@ public class ListDriver {
                 listOfLists = this.getToDoLists();
                 break;
             case GOAL:
-                this.setGoalList(null);
-                return;
+                throw new IllegalArgumentException("Use the getGoalList() method");
             case TEAM:
                 listOfLists = this.getTeamLists();
                 break;
             default:
                 throw new IllegalArgumentException("The list type (" + listType + ") does not exist");
         }
-
-        for(int i = 0; i < listOfLists.size(); i++) {
-            if (listOfLists.get(i).getListName().equals(listName)) {
-                listOfLists.remove(i);
-                return;
-            }
-        }
-        throw new IllegalArgumentException("The list (" + listName + ") does not exist");
+        return listOfLists;
     }
 
     public void toggleList(ListType listType) {
@@ -229,23 +236,13 @@ public class ListDriver {
         this.setEnabledLists(mapToSet);
     }
 
-    private List getList(String listName, ListType listType) {
-        ArrayList<? extends List> listOfLists;
-        switch(listType) {
-            case SHOPPING:
-                listOfLists = this.getShoppingLists();
-                break;
-            case TODO:
-                listOfLists = this.getToDoLists();
-                break;
-            case GOAL:
-                return this.getGoalList();
-            case TEAM:
-                listOfLists = this.getTeamLists();
-                break;
-            default:
-                throw new IllegalArgumentException("The list type (" + listType + ") does not exist");
+    public List getList(String listName, ListType listType) {
+        if (listType == ListType.GOAL) {
+            return this.getGoalList();
         }
+
+        ArrayList<? extends List> listOfLists = this.getListsOfType(listType);
+
         for(int i = 0; i < listOfLists.size(); i++) {
             if (listOfLists.get(i).getListName().equals(listName)) {
                 return listOfLists.get(i);

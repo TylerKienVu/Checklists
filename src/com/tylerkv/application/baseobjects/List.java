@@ -165,7 +165,7 @@ public abstract class List {
         this.getItem(itemName).toggleComplete();
     }
 
-    private ListItem getItem(String itemName) {
+    public ListItem getItem(String itemName) {
         ArrayList<ListItem> currentItemList = this.getItemList();
         for(int i = 0; i < currentItemList.size(); i++) {
             if (currentItemList.get(i).getItemName().equals(itemName)) {

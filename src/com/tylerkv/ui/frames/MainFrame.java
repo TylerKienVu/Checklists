@@ -11,12 +11,18 @@ import java.awt.*;
 public class MainFrame extends JFrame{
     private Driver guiDriver;
     private ListDriver listDriver;
+    private MainView mainView;
+    private SideBarView sideBarView;
 
     public MainFrame(Driver guiDriver, ListDriver listDriver) {
         this.guiDriver = guiDriver;
         this.listDriver = listDriver;
         this.initFrame();
         this.initViews();
+    }
+
+    public void showPanel(String panelName) {
+        mainView.showPanel(panelName);
     }
 
     private void initFrame() {
@@ -28,8 +34,8 @@ public class MainFrame extends JFrame{
     }
 
     private void initViews() {
-        MainView mainView = new MainView(this, listDriver);
-        SideBarView sideBarView = new SideBarView(this);
+        mainView = new MainView(this, listDriver);
+        sideBarView = new SideBarView(this);
 
         this.add(sideBarView, BorderLayout.WEST);
         this.add(mainView, BorderLayout.CENTER);

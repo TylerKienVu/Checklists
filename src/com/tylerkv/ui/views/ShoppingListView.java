@@ -1,9 +1,16 @@
 package com.tylerkv.ui.views;
 
+import com.tylerkv.application.baseobjects.ListItem;
+import com.tylerkv.application.listitems.ShoppingListItem;
 import com.tylerkv.application.lists.ShoppingList;
 import com.tylerkv.application.utilities.ListDriver;
+import com.tylerkv.application.utilities.ListType;
+import com.tylerkv.ui.frames.creation.AddShoppingItemFrame;
+import com.tylerkv.ui.frames.creation.AddShoppingListFrame;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
@@ -20,6 +27,9 @@ public class ShoppingListView extends JPanel {
     private JScrollPane itemListScrollPane;
     private JList itemList;
     private DefaultListModel listModel;
+    private JLabel itemNameLabel;
+    private JLabel itemQuantityLabel;
+    private JLabel itemDescLabel;
 
     public ShoppingListView(MainView parentView, ListDriver listDriver) {
         this.listDriver = listDriver;
@@ -27,38 +37,103 @@ public class ShoppingListView extends JPanel {
         this.initPanel();
     }
 
+    public void createList(String listName) {
+        try {
+            this.listDriver.addShoppingList(listName);
+            this.loadShoppingLists();
+        }
+        catch (IllegalArgumentException e) {
+            return;
+        }
+    }
+
+    public void createItem(String itemName, String desc, int quantity) {
+        try {
+            ShoppingListItem itemToAdd = new ShoppingListItem(itemName, desc, quantity);
+            this.listDriver.addItemToList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING, itemToAdd);
+            this.loadShoppingListItems();
+        }
+        catch (IllegalArgumentException e) {
+            return;
+        }
+    }
+
+    private void deleteSelectedList() {
+        String listToDelete = (String) listsComboBox.getSelectedItem();
+        this.listDriver.deleteList(listToDelete, ListType.SHOPPING);
+        this.loadShoppingLists();
+        this.loadShoppingListItems();
+    }
+
+    private void deleteSelectedItem() {
+        // Get rid of Qty part of string
+        String itemString = (String)itemList.getSelectedValue();
+        String itemToDelete = itemString.split(" ")[0];
+
+        this.listDriver.deleteItemFromList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING,itemToDelete);
+        this.loadShoppingListItems();
+    }
+
+    private void loadShoppingLists() {
+        listsComboBox.removeAllItems();
+        ArrayList<ShoppingList> shoppingLists = this.listDriver.getShoppingLists();
+        for(int i = 0; i < shoppingLists.size(); i++) {
+            listsComboBox.addItem(shoppingLists.get(i).getListName());
+        }
+    }
+
+    private void loadShoppingListItems() {
+        listModel.removeAllElements();
+        if (listsComboBox.getSelectedItem() != null) {
+            ShoppingList selectedShoppingList = (ShoppingList) this.listDriver.getList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING);
+            ArrayList<ListItem> itemList = selectedShoppingList.getItemList();
+            for(int i = 0; i < itemList.size(); i++) {
+                ShoppingListItem currentItem = (ShoppingListItem) itemList.get(i);
+                String stringToAdd = String.format("%-20s Qty: %s", currentItem.getItemName(), currentItem.getQuantity());
+                listModel.addElement(stringToAdd);
+            }
+        }
+    }
+
     private void initPanel() {
         this.initComponents();
         this.initLayout();
         this.loadShoppingLists();
+        this.loadShoppingListItems();
     }
 
     private void initComponents() {
+        itemNameLabel = new JLabel("<html>Name: </html>");
+        itemDescLabel = new JLabel("<html>Description: </html>");
+        itemQuantityLabel = new JLabel("<html>Quantity: </html>");
+
         addListButton = new JButton("Add List");
         addListButton.setActionCommand("ADD LIST");
+        addListButton.addActionListener(new AddListAction(this));
 
         deleteListButton = new JButton("Delete List");
         deleteListButton.setActionCommand("DELETE LIST");
+        deleteListButton.addActionListener(new DeleteListAction(this));
 
         addItemButton = new JButton("Add Item");
         addItemButton.setActionCommand("ADD ITEM");
+        addItemButton.addActionListener(new AddItemAction(this));
 
         deleteItemButton = new JButton("Delete Item");
         deleteItemButton.setActionCommand("DELETE ITEM");
+        deleteItemButton.addActionListener(new DeleteItemAction());
 
         listsComboBox = new JComboBox<>();
+        listsComboBox.addActionListener(new NewListSelectedAction());
 
         itemList = new JList();
         listModel = new DefaultListModel();
         itemList.setModel(listModel);
-
+        itemList.addListSelectionListener(new NewListItemSelectedListener());
 
         itemListScrollPane = new JScrollPane();
         itemListScrollPane.setPreferredSize(new Dimension(250, 200));
         itemListScrollPane.getViewport().add(itemList);
-
-
-
     }
 
     private void initLayout() {
@@ -87,6 +162,12 @@ public class ShoppingListView extends JPanel {
                     .addComponent(addItemButton)
                     .addComponent(deleteItemButton))
                 .addGap(10))
+            .addGroup(groupLayout.createSequentialGroup()
+                .addGap(10)
+                .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                    .addComponent(itemNameLabel)
+                    .addComponent(itemQuantityLabel)
+                    .addComponent(itemDescLabel)))
         );
 
         groupLayout.setVerticalGroup(groupLayout.createSequentialGroup()
@@ -105,20 +186,92 @@ public class ShoppingListView extends JPanel {
                     .addComponent(addItemButton)
                     .addGap(5)
                     .addComponent(deleteItemButton)))
+            .addGroup(groupLayout.createSequentialGroup()
+                .addComponent(itemNameLabel)
+                .addGap(5)
+                .addComponent(itemQuantityLabel)
+                .addGap(5)
+                .addComponent(itemDescLabel)
+                .addGap(30))
         );
     }
 
-    private void loadShoppingLists() {
-        ArrayList<ShoppingList> shoppingLists = this.listDriver.getShoppingLists();
-        for(int i = 0; i < shoppingLists.size(); i++) {
-            listsComboBox.addItem(shoppingLists.get(i).getListName());
+    private class AddListAction extends AbstractAction {
+        private ShoppingListView shoppingListView;
+
+        private AddListAction(ShoppingListView shoppingListView) {
+            this.shoppingListView = shoppingListView;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            AddShoppingListFrame addShoppingListFrame = new AddShoppingListFrame(shoppingListView);
         }
     }
 
-    private class AddListAction extends AbstractAction {
+    private class DeleteListAction extends AbstractAction {
+        private ShoppingListView shoppingListView;
+
+        private DeleteListAction(ShoppingListView shoppingListView) {
+            this.shoppingListView = shoppingListView;
+        }
+
         @Override
         public void actionPerformed(ActionEvent e) {
+            if(shoppingListView.listsComboBox.getSelectedItem() != null) {
+                shoppingListView.deleteSelectedList();
+            }
+        }
+    }
 
+    private class AddItemAction extends AbstractAction {
+        private ShoppingListView shoppingListView;
+
+        private AddItemAction(ShoppingListView shoppingListView) {
+            this.shoppingListView = shoppingListView;
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(listsComboBox.getSelectedItem() != null) {
+                AddShoppingItemFrame addShoppingItemFrame = new AddShoppingItemFrame(shoppingListView);
+            }
+        }
+    }
+
+    private class DeleteItemAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(itemList.getSelectedValue() != null) {
+                deleteSelectedItem();
+            }
+        }
+    }
+
+    private class NewListSelectedAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(listsComboBox.getSelectedItem() != null) {
+                loadShoppingListItems();
+            }
+        }
+    }
+
+    private class NewListItemSelectedListener implements ListSelectionListener {
+        @Override
+        public void valueChanged(ListSelectionEvent e) {
+            if(!e.getValueIsAdjusting() && itemList.getSelectedValue() != null) {
+                //Process string and remove Qty
+                String selectedString = (String) itemList.getSelectedValue();
+                String selectedItemString = selectedString.split(" ")[0];
+
+                ShoppingList selectedShoppingList = (ShoppingList) listDriver.getList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING);
+                ShoppingListItem selectedItem = (ShoppingListItem) selectedShoppingList.getItem(selectedItemString);
+
+                itemNameLabel.setText("<html>Name: " + selectedItem.getItemName() + "</html>");
+                itemDescLabel.setText("<html>Description: " + selectedItem.getDescription() + "</html>");
+                itemQuantityLabel.setText("<html>Quantity: " + selectedItem.getQuantity()+ "</html>");
+            }
         }
     }
 }

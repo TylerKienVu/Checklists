@@ -97,7 +97,7 @@ public abstract class ListItem {
 
         ListItem typeCastedObj = (ListItem) obj;
 
-        return typeCastedObj.getItemName() == this.getItemName();
+        return typeCastedObj.getItemName().equals(this.getItemName());
     }
 
     public void toggleComplete() {

@@ -7,9 +7,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOError;
 import java.io.IOException;
 
 // TODO: Attach listeners to buttons
@@ -43,6 +43,7 @@ public class SideBarView extends JPanel {
         initProfilePicture();
         shoppingButton = new JButton("Shopping Lists");
         shoppingButton.setActionCommand("SHOP");
+        shoppingButton.addActionListener(new ShopClickAction());
 
         todoButton = new JButton("Todo Lists");
         todoButton.setActionCommand("TODO");
@@ -107,5 +108,12 @@ public class SideBarView extends JPanel {
             .addComponent(goalButton)
             .addGap(25)
             .addComponent(teamButton));
+    }
+
+    private class ShopClickAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            parentFrame.showPanel("SHOPPING");
+        }
     }
 }
