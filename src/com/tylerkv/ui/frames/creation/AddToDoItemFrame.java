@@ -6,34 +6,47 @@ import com.tylerkv.ui.views.ToDoListView;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 public class AddToDoItemFrame extends JFrame {
-    private ToDoListView ToDoListView;
+    private ToDoListView toDoListView;
     private JPanel container;
     private GroupLayout groupLayout;
     private JLabel itemNameLabel;
     private JLabel itemDescLabel;
-    private JLabel quantityLabel;
+    private JLabel priorityLabel;
+    private JLabel startDateLabel;
+    private JLabel endDateLabel;
+    private JLabel addStartDateLabel;
+    private JLabel addEndDateLabel;
     private JTextField itemNameTextField;
     private JTextField itemDescTextField;
     private JSpinner numberSpinner;
     private JButton createButton;
     private JCalendar startDateCalendar;
     private JCalendar endDateCalendar;
+    private JCheckBox startCheck;
+    private JCheckBox endCheck;
 
     public AddToDoItemFrame(ToDoListView ToDoListView) {
-        this.ToDoListView = ToDoListView;
+        this.toDoListView = ToDoListView;
         this.initFrame();
         this.initPanel();
     }
 
     private void initFrame() {
-        this.setTitle("Create Shopping List Item");
+        this.setTitle("Create Todo List Item");
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(false);
-        this.setPreferredSize(new Dimension(300,170));
+        this.setPreferredSize(new Dimension(600,800));
         this.setLayout(new BorderLayout());
+
+        //Link "Register" key to create action
+        this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),"CREATE");
+        this.getRootPane().getActionMap().put("CREATE", new CreateItemAction(this));
     }
 
     private void initPanel() {
@@ -46,7 +59,18 @@ public class AddToDoItemFrame extends JFrame {
 
         itemNameLabel = new JLabel("Item Name");
         itemDescLabel = new JLabel("Item Description");
-        quantityLabel = new JLabel("Quantity");
+        priorityLabel = new JLabel("Priority");
+        startDateLabel = new JLabel("Completion Range Start Date");
+        endDateLabel = new JLabel("Completion Range End Date");
+        addStartDateLabel = new JLabel("Add Start Date");
+        addEndDateLabel = new JLabel("Add End Date");
+
+        startCheck = new JCheckBox();
+        startCheck.setEnabled(false);
+
+        endCheck = new JCheckBox();
+        endCheck.addActionListener(new EndDateCheckAction());
+
         itemNameTextField = new JTextField();
         itemDescTextField = new JTextField();
 
@@ -56,8 +80,11 @@ public class AddToDoItemFrame extends JFrame {
 
         SpinnerModel model = new SpinnerNumberModel(0, 0, 1, .01);
         numberSpinner = new JSpinner(model);
+        numberSpinner.setMaximumSize(new Dimension(50,5));
 
         startDateCalendar = new JCalendar();
+        endDateCalendar = new JCalendar();
+
     }
 
     private void initLayout() {
@@ -75,11 +102,19 @@ public class AddToDoItemFrame extends JFrame {
             .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                 .addComponent(itemNameLabel)
                 .addComponent(itemDescLabel)
-                .addComponent(quantityLabel))
-            .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                .addComponent(priorityLabel)
+                .addComponent(addStartDateLabel)
+                .addComponent(startDateLabel)
+                .addComponent(addEndDateLabel)
+                .addComponent(endDateLabel))
+            .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                 .addComponent(itemNameTextField)
                 .addComponent(itemDescTextField)
                 .addComponent(numberSpinner)
+                .addComponent(startCheck)
+                .addComponent(startDateCalendar)
+                .addComponent(endCheck)
+                .addComponent(endDateCalendar)
                 .addComponent(createButton))
             .addGap(40)
         );
@@ -92,28 +127,77 @@ public class AddToDoItemFrame extends JFrame {
                 .addComponent(itemDescLabel)
                 .addComponent(itemDescTextField))
             .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                .addComponent(quantityLabel)
+                .addComponent(priorityLabel)
                 .addComponent(numberSpinner))
-            .addGap(15)
+            .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addComponent(addStartDateLabel)
+                .addComponent(startCheck))
+            .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addComponent(startDateLabel)
+                .addComponent(startDateCalendar))
+            .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addComponent(addEndDateLabel)
+                .addComponent(endCheck))
+            .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addComponent(endDateLabel)
+                .addComponent(endDateCalendar))
+            .addGap(10)
             .addComponent(createButton)
         );
     }
 
     private class CreateItemAction extends AbstractAction {
-        private AddToDoItemFrame addShoppingItemFrame;
+        private AddToDoItemFrame addToDoItemFrame;
 
-        public CreateItemAction(AddToDoItemFrame addShoppingItemFrame) {
-            this.addShoppingItemFrame = addShoppingItemFrame;
+        public CreateItemAction(AddToDoItemFrame addToDoItemFrame) {
+            this.addToDoItemFrame = addToDoItemFrame;
         }
 
+        /** @noinspection deprecation*/
         @Override
         public void actionPerformed(ActionEvent e) {
             // TODO: Add tooltip if null
 
-            if(itemNameTextField.getText() != null && itemDescTextField != null) {
-                ToDoListView.createItem(itemNameTextField.getText(), itemDescTextField.getText(), (int)numberSpinner.getValue());
-                addShoppingItemFrame.dispose();
+            if(itemNameTextField.getText() != "") {
+                LocalDateTime startDate = null;
+                LocalDateTime endDate = null;
+
+                // TODO: Figure out why date days are not making sense
+
+                if(endCheck.isSelected()) {
+                    //convert to LocalDateTime for constructors
+                    Date userInputEndDate = endDateCalendar.getDate();
+                    System.out.println(userInputEndDate.getDay());
+                    endDate = LocalDateTime.of(userInputEndDate.getYear()
+                            , userInputEndDate.getMonth()
+                            , userInputEndDate.getDay(), 0, 0);
+                }
+                if(startCheck.isSelected()) {
+                    Date userInputStartDate = startDateCalendar.getDate();
+                    System.out.println(userInputStartDate.getDay());
+                    startDate = LocalDateTime.of(userInputStartDate.getYear()
+                            , userInputStartDate.getMonth()
+                            , userInputStartDate.getDay(), 0,0);
+                }
+                toDoListView.createItem(itemNameTextField.getText()
+                        , itemDescTextField.getText()
+                        , startDate, endDate
+                        , (double) numberSpinner.getValue());
+                addToDoItemFrame.dispose();
             }
+        }
+    }
+
+    private class EndDateCheckAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(endCheck.isSelected()) {
+                startCheck.setEnabled(true);
+            }
+            else {
+                startCheck.setEnabled(false);
+            }
+
         }
     }
 

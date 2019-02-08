@@ -43,6 +43,7 @@ public class ShoppingListView extends JPanel {
             this.loadShoppingLists();
         }
         catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
             return;
         }
     }
@@ -54,6 +55,7 @@ public class ShoppingListView extends JPanel {
             this.loadShoppingListItems();
         }
         catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
             return;
         }
     }
@@ -68,7 +70,7 @@ public class ShoppingListView extends JPanel {
     private void deleteSelectedItem() {
         // Get rid of Qty part of string
         String itemString = (String)itemList.getSelectedValue();
-        String itemToDelete = itemString.split(" ")[0];
+        String itemToDelete = itemString.split("-")[0].strip();
 
         this.listDriver.deleteItemFromList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING,itemToDelete);
         this.loadShoppingListItems();
@@ -89,7 +91,7 @@ public class ShoppingListView extends JPanel {
             ArrayList<ListItem> itemList = selectedShoppingList.getItemList();
             for(int i = 0; i < itemList.size(); i++) {
                 ShoppingListItem currentItem = (ShoppingListItem) itemList.get(i);
-                String stringToAdd = String.format("%-20s Qty: %s", currentItem.getItemName(), currentItem.getQuantity());
+                String stringToAdd = String.format("%-20s - Qty: %s", currentItem.getItemName(), currentItem.getQuantity());
                 listModel.addElement(stringToAdd);
             }
         }
@@ -124,6 +126,7 @@ public class ShoppingListView extends JPanel {
         deleteItemButton.addActionListener(new DeleteItemAction());
 
         listsComboBox = new JComboBox<>();
+        listsComboBox.setMaximumSize(new Dimension(400,5));
         listsComboBox.addActionListener(new NewListSelectedAction());
 
         itemList = new JList();
@@ -132,7 +135,7 @@ public class ShoppingListView extends JPanel {
         itemList.addListSelectionListener(new NewListItemSelectedListener());
 
         itemListScrollPane = new JScrollPane();
-        itemListScrollPane.setPreferredSize(new Dimension(250, 200));
+        itemListScrollPane.setPreferredSize(new Dimension(250, 300));
         itemListScrollPane.getViewport().add(itemList);
     }
 
@@ -187,6 +190,7 @@ public class ShoppingListView extends JPanel {
                     .addGap(5)
                     .addComponent(deleteItemButton)))
             .addGroup(groupLayout.createSequentialGroup()
+                .addGap(20)
                 .addComponent(itemNameLabel)
                 .addGap(5)
                 .addComponent(itemQuantityLabel)
@@ -263,7 +267,7 @@ public class ShoppingListView extends JPanel {
             if(!e.getValueIsAdjusting() && itemList.getSelectedValue() != null) {
                 //Process string and remove Qty
                 String selectedString = (String) itemList.getSelectedValue();
-                String selectedItemString = selectedString.split(" ")[0];
+                String selectedItemString = selectedString.split("-")[0].strip();
 
                 ShoppingList selectedShoppingList = (ShoppingList) listDriver.getList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING);
                 ShoppingListItem selectedItem = (ShoppingListItem) selectedShoppingList.getItem(selectedItemString);
@@ -271,6 +275,12 @@ public class ShoppingListView extends JPanel {
                 itemNameLabel.setText("<html>Name: " + selectedItem.getItemName() + "</html>");
                 itemDescLabel.setText("<html>Description: " + selectedItem.getDescription() + "</html>");
                 itemQuantityLabel.setText("<html>Quantity: " + selectedItem.getQuantity()+ "</html>");
+            }
+            else {
+                // Clear the labels if nothing selected
+                itemNameLabel.setText("<html>Name: </html>");
+                itemDescLabel.setText("<html>Description: </html>");
+                itemQuantityLabel.setText("<html>Quantity: </html>");
             }
         }
     }

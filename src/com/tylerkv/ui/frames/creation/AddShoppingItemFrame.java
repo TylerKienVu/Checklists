@@ -5,6 +5,7 @@ import com.tylerkv.ui.views.ShoppingListView;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 public class AddShoppingItemFrame extends JFrame {
     private ShoppingListView shoppingListView;
@@ -31,6 +32,10 @@ public class AddShoppingItemFrame extends JFrame {
         this.setResizable(false);
         this.setPreferredSize(new Dimension(300,170));
         this.setLayout(new BorderLayout());
+
+        //Link "Register" key to create action
+        this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),"CREATE");
+        this.getRootPane().getActionMap().put("CREATE", new CreateItemAction(this));
     }
 
     private void initPanel() {
@@ -53,6 +58,7 @@ public class AddShoppingItemFrame extends JFrame {
 
         SpinnerModel model = new SpinnerNumberModel(1, 1, 100, 1);
         numberSpinner = new JSpinner(model);
+        numberSpinner.setMaximumSize(new Dimension(10,5));
     }
 
     private void initLayout() {
@@ -105,7 +111,7 @@ public class AddShoppingItemFrame extends JFrame {
         public void actionPerformed(ActionEvent e) {
             // TODO: Add tooltip if null
 
-            if(itemNameTextField.getText() != null && itemDescTextField != null) {
+            if(itemNameTextField.getText() != "") {
                 shoppingListView.createItem(itemNameTextField.getText(), itemDescTextField.getText(), (int)numberSpinner.getValue());
                 addShoppingItemFrame.dispose();
             }

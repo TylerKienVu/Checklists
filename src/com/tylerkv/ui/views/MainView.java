@@ -13,6 +13,7 @@ public class MainView extends JPanel {
     private CardLayout cardLayout;
     private JFrame parentFrame;
     private ShoppingListView shoppingListView;
+    private ToDoListView toDoListView;
     private ListDriver listDriver;
 
     public MainView(JFrame parentFrame, ListDriver listDriver) {
@@ -34,8 +35,10 @@ public class MainView extends JPanel {
     private void initPanels() {
         // Init list details panels here
         shoppingListView = new ShoppingListView(this, listDriver);
+        toDoListView = new ToDoListView(this, listDriver);
 
         this.add(shoppingListView, "SHOPPING");
+        this.add(toDoListView, "TODO");
     }
 
     public void showPanel(String panelName) {

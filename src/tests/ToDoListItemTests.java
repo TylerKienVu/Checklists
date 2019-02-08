@@ -78,10 +78,16 @@ public class ToDoListItemTests {
         ToDoListItem testItem1 = new ToDoListItem("TestItem", "Desc", testTime1);
         ToDoListItem testItem2 = new ToDoListItem("TestItem", "Desc", testTime2);
 
-        assert testItem1.getDaysUntilDue() > 0;
-        assert !testItem1.isOverDue();
+        try {
+            assert testItem1.getDaysUntilDue() > 0;
+            assert !testItem1.isOverDue();
 
-        assert testItem2.getDaysUntilDue() < 0;
-        assert testItem2.isOverDue();
+            assert testItem2.getDaysUntilDue() < 0;
+            assert testItem2.isOverDue();
+        }
+        catch(IllegalAccessException e) {
+
+        }
+
     }
 }

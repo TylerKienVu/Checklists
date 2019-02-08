@@ -47,6 +47,7 @@ public class SideBarView extends JPanel {
 
         todoButton = new JButton("Todo Lists");
         todoButton.setActionCommand("TODO");
+        todoButton.addActionListener(new ToDoClickAction());
 
         goalButton = new JButton("Goal Lists");
         goalButton.setActionCommand("GOAL");
@@ -114,6 +115,13 @@ public class SideBarView extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             parentFrame.showPanel("SHOPPING");
+        }
+    }
+
+    private class ToDoClickAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            parentFrame.showPanel("TODO");
         }
     }
 }

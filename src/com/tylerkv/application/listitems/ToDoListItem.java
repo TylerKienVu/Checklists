@@ -12,6 +12,17 @@ public class ToDoListItem extends ListItem {
     private LocalDateTime completionRangeStartDate;
     private LocalDateTime completionRangeEndDate; //Uses endDate as "Due date" if startDate == null
 
+    // Adding in two more constructors because forgot that deadline is optional
+
+    public ToDoListItem(String itemName, String description){
+        super(itemName, description, ListType.TODO);
+    }
+
+    public ToDoListItem(String itemName, String description, double itemPriority) {
+        super(itemName, description, ListType.TODO);
+        this.setItemPriority(itemPriority);
+    }
+
     // No options taken
     public ToDoListItem(String itemName, String description
             , LocalDateTime completionRangeEndDate) {
@@ -78,12 +89,15 @@ public class ToDoListItem extends ListItem {
 
     // METHODS
 
-    public double getDaysUntilDue() {
+    public double getDaysUntilDue() throws IllegalAccessException{
+        if (this.getCompletionRangeEndDate() == null) {
+            throw new IllegalAccessException("This item has no deadline");
+        }
         long hoursUntil =  ChronoUnit.HOURS.between(LocalDateTime.now(), this.getCompletionRangeEndDate());
         return hoursUntil / 24.0;
     }
 
-    public boolean isOverDue() {
+    public boolean isOverDue() throws IllegalAccessException{
         return this.getDaysUntilDue() <= 0;
     }
 

@@ -5,13 +5,16 @@ import com.tylerkv.ui.views.ToDoListView;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 public class AddToDoListFrame extends JFrame {
     private ToDoListView ToDoListView;
     private JPanel container;
     private GroupLayout groupLayout;
     private JLabel listNameLabel;
+    private JLabel priorityLabel;
     private JTextField listNameTextField;
+    private JSpinner numberSpinner;
     private JButton createButton;
 
     public AddToDoListFrame(ToDoListView ToDoListView) {
@@ -21,12 +24,16 @@ public class AddToDoListFrame extends JFrame {
     }
 
     private void initFrame() {
-        this.setTitle("Create Shopping List");
+        this.setTitle("Create Todo List");
         this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(false);
-        this.setPreferredSize(new Dimension(300,120));
+        this.setPreferredSize(new Dimension(300,150));
         this.setLayout(new BorderLayout());
+
+        //Link "Register" key to create action
+        this.getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER,0),"CREATE");
+        this.getRootPane().getActionMap().put("CREATE", new CreateListAction(this));
     }
 
     private void initPanel() {
@@ -39,6 +46,11 @@ public class AddToDoListFrame extends JFrame {
 
         listNameLabel = new JLabel("List Name");
         listNameTextField = new JTextField();
+
+        SpinnerModel model = new SpinnerNumberModel(0, 0, 1, 0.01);
+        numberSpinner = new JSpinner(model);
+        numberSpinner.setMaximumSize(new Dimension(50,5));
+        priorityLabel = new JLabel("Priority");
 
         createButton = new JButton("Create List");
         createButton.setActionCommand("CREATE LIST");
@@ -60,6 +72,9 @@ public class AddToDoListFrame extends JFrame {
             .addGroup(groupLayout.createSequentialGroup()
                 .addComponent(listNameLabel)
                 .addComponent(listNameTextField))
+            .addGroup(groupLayout.createSequentialGroup()
+                .addComponent(priorityLabel)
+                .addComponent(numberSpinner))
             .addComponent(createButton)
         );
 
@@ -67,6 +82,9 @@ public class AddToDoListFrame extends JFrame {
             .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                 .addComponent(listNameLabel)
                 .addComponent(listNameTextField))
+            .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                .addComponent(priorityLabel)
+                .addComponent(numberSpinner))
             .addComponent(createButton)
         );
 
@@ -84,7 +102,7 @@ public class AddToDoListFrame extends JFrame {
             // TODO: Add tooltip if null
 
             if(listNameTextField.getText() != null) {
-                ToDoListView.createList(listNameTextField.getText());
+                ToDoListView.createList(listNameTextField.getText(), (double)numberSpinner.getValue());
                 addToDoListFrame.dispose();
             }
         }
