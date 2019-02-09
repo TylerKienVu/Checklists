@@ -5,6 +5,7 @@ import com.tylerkv.application.listitems.ShoppingListItem;
 import com.tylerkv.application.lists.ShoppingList;
 import com.tylerkv.application.utilities.ListDriver;
 import com.tylerkv.application.utilities.ListType;
+import com.tylerkv.application.utilities.Status;
 import com.tylerkv.ui.frames.creation.AddShoppingItemFrame;
 import com.tylerkv.ui.frames.creation.AddShoppingListFrame;
 
@@ -23,6 +24,7 @@ public class ShoppingListView extends JPanel {
     private JButton deleteListButton;
     private JButton addItemButton;
     private JButton deleteItemButton;
+    private JButton completeItemButton;
     private JComboBox<String> listsComboBox;
     private JScrollPane itemListScrollPane;
     private JList itemList;
@@ -68,11 +70,20 @@ public class ShoppingListView extends JPanel {
     }
 
     private void deleteSelectedItem() {
-        // Get rid of Qty part of string
+        // Get rid of extra info in name
         String itemString = (String)itemList.getSelectedValue();
         String itemToDelete = itemString.split("-")[0].strip();
 
         this.listDriver.deleteItemFromList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING,itemToDelete);
+        this.loadShoppingListItems();
+    }
+
+    private void toggleSelectedItem() {
+        // Get rid extra info in name
+        String itemString = (String)itemList.getSelectedValue();
+        String itemToComplete = itemString.split("-")[0].strip();
+
+        this.listDriver.toggleItemComplete(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING, itemToComplete);
         this.loadShoppingListItems();
     }
 
@@ -91,7 +102,13 @@ public class ShoppingListView extends JPanel {
             ArrayList<ListItem> itemList = selectedShoppingList.getItemList();
             for(int i = 0; i < itemList.size(); i++) {
                 ShoppingListItem currentItem = (ShoppingListItem) itemList.get(i);
-                String stringToAdd = String.format("%-20s - Qty: %s", currentItem.getItemName(), currentItem.getQuantity());
+                String stringToAdd;
+                if (currentItem.getStatus() == Status.COMPELTE) {
+                    stringToAdd = String.format("%-20s - Qty: %-5s COMPLETE", currentItem.getItemName(), currentItem.getQuantity());
+                }
+                else {
+                    stringToAdd = String.format("%-20s - Qty: %s", currentItem.getItemName(), currentItem.getQuantity());
+                }
                 listModel.addElement(stringToAdd);
             }
         }
@@ -124,6 +141,10 @@ public class ShoppingListView extends JPanel {
         deleteItemButton = new JButton("Delete Item");
         deleteItemButton.setActionCommand("DELETE ITEM");
         deleteItemButton.addActionListener(new DeleteItemAction());
+
+        completeItemButton = new JButton("Toggle Complete");
+        completeItemButton.setActionCommand("COMPLETE");
+        completeItemButton.addActionListener(new ToggleItemAction());
 
         listsComboBox = new JComboBox<>();
         listsComboBox.setMaximumSize(new Dimension(400,5));
@@ -163,7 +184,8 @@ public class ShoppingListView extends JPanel {
                 .addGap(10)
                 .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(addItemButton)
-                    .addComponent(deleteItemButton))
+                    .addComponent(deleteItemButton)
+                    .addComponent(completeItemButton))
                 .addGap(10))
             .addGroup(groupLayout.createSequentialGroup()
                 .addGap(10)
@@ -188,7 +210,9 @@ public class ShoppingListView extends JPanel {
                 .addGroup(groupLayout.createSequentialGroup()
                     .addComponent(addItemButton)
                     .addGap(5)
-                    .addComponent(deleteItemButton)))
+                    .addComponent(deleteItemButton)
+                    .addGap(5)
+                    .addComponent(completeItemButton)))
             .addGroup(groupLayout.createSequentialGroup()
                 .addGap(20)
                 .addComponent(itemNameLabel)
@@ -248,6 +272,15 @@ public class ShoppingListView extends JPanel {
         public void actionPerformed(ActionEvent e) {
             if(itemList.getSelectedValue() != null) {
                 deleteSelectedItem();
+            }
+        }
+    }
+
+    private class ToggleItemAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(itemList.getSelectedValue() != null) {
+                toggleSelectedItem();
             }
         }
     }

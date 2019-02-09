@@ -51,9 +51,11 @@ public class SideBarView extends JPanel {
 
         goalButton = new JButton("Goal Lists");
         goalButton.setActionCommand("GOAL");
+        goalButton.addActionListener(new GoalClickAction());
 
         teamButton = new JButton("Team Lists");
         teamButton.setActionCommand("TEAM");
+        teamButton.addActionListener(new TeamClickAction());
     }
 
     private void initProfilePicture() {
@@ -122,6 +124,20 @@ public class SideBarView extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             parentFrame.showPanel("TODO");
+        }
+    }
+
+    private class GoalClickAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            parentFrame.showPanel("GOAL");
+        }
+    }
+
+    private class TeamClickAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            parentFrame.showPanel("TEAM");
         }
     }
 }

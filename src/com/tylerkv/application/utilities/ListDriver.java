@@ -19,6 +19,8 @@ public class ListDriver {
     private ListUser owner;
     private Map<ListType, Boolean> enabledLists;
 
+    // TODO: Change listdriver to be friends with lists so only it can get direct access
+
     // GoalList will not be instantiated until user decides they want one
     public ListDriver(ListUser owner) {
         this.setOwner(owner);
@@ -132,6 +134,7 @@ public class ListDriver {
     public void deleteList(String listName, ListType listType) {
         if (listType == ListType.GOAL) {
             this.setGoalList(null);
+            return;
         }
         ArrayList<? extends List> listOfLists = this.getListsOfType(listType);
 

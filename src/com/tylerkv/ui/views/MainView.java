@@ -14,6 +14,8 @@ public class MainView extends JPanel {
     private JFrame parentFrame;
     private ShoppingListView shoppingListView;
     private ToDoListView toDoListView;
+    private GoalListView goalListView;
+    private TeamListView teamListView;
     private ListDriver listDriver;
 
     public MainView(JFrame parentFrame, ListDriver listDriver) {
@@ -36,9 +38,13 @@ public class MainView extends JPanel {
         // Init list details panels here
         shoppingListView = new ShoppingListView(this, listDriver);
         toDoListView = new ToDoListView(this, listDriver);
+        goalListView = new GoalListView(this, listDriver);
+        teamListView = new TeamListView(this, listDriver);
 
         this.add(shoppingListView, "SHOPPING");
         this.add(toDoListView, "TODO");
+        this.add(goalListView, "GOAL");
+        this.add(teamListView, "TEAM");
     }
 
     public void showPanel(String panelName) {

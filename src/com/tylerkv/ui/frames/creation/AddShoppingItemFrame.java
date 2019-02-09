@@ -111,7 +111,7 @@ public class AddShoppingItemFrame extends JFrame {
         public void actionPerformed(ActionEvent e) {
             // TODO: Add tooltip if null
 
-            if(itemNameTextField.getText() != "") {
+            if(!itemNameTextField.getText().equals("")) {
                 shoppingListView.createItem(itemNameTextField.getText(), itemDescTextField.getText(), (int)numberSpinner.getValue());
                 addShoppingItemFrame.dispose();
             }

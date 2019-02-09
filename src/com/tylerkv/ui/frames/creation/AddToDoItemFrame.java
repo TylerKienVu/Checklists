@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 public class AddToDoItemFrame extends JFrame {
@@ -158,26 +159,28 @@ public class AddToDoItemFrame extends JFrame {
         public void actionPerformed(ActionEvent e) {
             // TODO: Add tooltip if null
 
-            if(itemNameTextField.getText() != "") {
+            if(!itemNameTextField.getText().equals("")) {
                 LocalDateTime startDate = null;
                 LocalDateTime endDate = null;
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE MMM dd HH:mm:ss zzz uuuu");
 
                 // TODO: Figure out why date days are not making sense
 
                 if(endCheck.isSelected()) {
+
                     //convert to LocalDateTime for constructors
                     Date userInputEndDate = endDateCalendar.getDate();
-                    System.out.println(userInputEndDate.getDay());
-                    endDate = LocalDateTime.of(userInputEndDate.getYear()
-                            , userInputEndDate.getMonth()
-                            , userInputEndDate.getDay(), 0, 0);
+                    LocalDateTime convertedDateTime = LocalDateTime.parse(userInputEndDate.toString(),formatter);
+                    endDate = LocalDateTime.of(convertedDateTime.getYear()
+                            , convertedDateTime.getMonthValue()
+                            , convertedDateTime.getDayOfMonth(), convertedDateTime.getHour(), convertedDateTime.getMinute());
                 }
                 if(startCheck.isSelected()) {
                     Date userInputStartDate = startDateCalendar.getDate();
-                    System.out.println(userInputStartDate.getDay());
-                    startDate = LocalDateTime.of(userInputStartDate.getYear()
-                            , userInputStartDate.getMonth()
-                            , userInputStartDate.getDay(), 0,0);
+                    LocalDateTime convertedDateTime = LocalDateTime.parse(userInputStartDate.toString(), formatter);
+                    startDate = LocalDateTime.of(convertedDateTime.getYear()
+                            , convertedDateTime.getMonthValue()
+                            , convertedDateTime.getDayOfMonth(), convertedDateTime.getHour(),convertedDateTime.getMinute());
                 }
                 toDoListView.createItem(itemNameTextField.getText()
                         , itemDescTextField.getText()

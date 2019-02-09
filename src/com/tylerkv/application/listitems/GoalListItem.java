@@ -1,5 +1,6 @@
 package com.tylerkv.application.listitems;
 
+import com.tylerkv.application.lists.GoalList;
 import com.tylerkv.application.utilities.ListType;
 
 import java.time.LocalDateTime;
@@ -8,6 +9,16 @@ import java.util.ArrayList;
 public class GoalListItem extends ToDoListItem {
     private GoalListItem parent;
     private ArrayList<GoalListItem> children;
+
+    public GoalListItem(String itemName, String description) {
+        super(itemName, description);
+        this.initializeGoalListItem();
+    }
+
+    public GoalListItem(String itemName, String description, double priority){
+        super(itemName, description, priority);
+        this.initializeGoalListItem();
+    }
 
     // No option taken
     public GoalListItem(String itemName, String description
@@ -86,6 +97,16 @@ public class GoalListItem extends ToDoListItem {
                     + child.getItemName()
                     + ") is already in the item list");
         }
+    }
+
+    public GoalListItem getChildGoal(String childItem) {
+        ArrayList<GoalListItem> currentChildList = this.getChildren();
+        for(GoalListItem child : currentChildList) {
+            if (child.getItemName().equals(childItem)) {
+                return child;
+            }
+        }
+        throw new IllegalArgumentException("The child (" + childItem + ") was not found");
     }
 
     public void deleteChildGoal(String itemToDelete) throws IllegalArgumentException {

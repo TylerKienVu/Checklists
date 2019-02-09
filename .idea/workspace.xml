@@ -1,13 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java" line="10" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java" line="15" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bc09cba-2f0e-4c45-84a4-cd590b9d7b77" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddGoalItemFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddGoalListFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddTeamItemFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddTeamListFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/views/GoalListView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/views/TeamListView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assignment 2 nojavafx.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Assignment 2 nojavafx.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tylerkv/application/listitems/ToDoListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/application/listitems/ToDoListItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/application/listitems/GoalListItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/application/listitems/GoalListItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/application/lists/GoalList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/application/lists/GoalList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/application/utilities/ListDriver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/application/utilities/ListDriver$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/application/utilities/ListDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/application/utilities/ListDriver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddShoppingItemFrame$CreateItemAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddShoppingItemFrame$CreateItemAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddShoppingListFrame$CreateListAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddShoppingListFrame$CreateListAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddToDoItemFrame$CreateItemAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddToDoItemFrame$CreateItemAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddToDoItemFrame$EndDateCheckAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddToDoItemFrame$EndDateCheckAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddToDoItemFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddToDoItemFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddToDoListFrame$CreateListAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/frames/creation/AddToDoListFrame$CreateListAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/MainView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/MainView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$AddItemAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$AddItemAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$AddListAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$AddListAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$DeleteItemAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$DeleteItemAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$DeleteListAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$DeleteListAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$NewListItemSelectedListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$NewListItemSelectedListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$NewListSelectedAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView$NewListSelectedAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ShoppingListView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/SideBarView$ShopClickAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/SideBarView$ShopClickAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/SideBarView$ToDoClickAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/SideBarView$ToDoClickAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/SideBarView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/SideBarView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$AddItemAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$AddItemAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$AddListAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$AddListAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$DeleteItemAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$DeleteItemAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$DeleteListAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$DeleteListAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$NewListItemSelectedListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$NewListItemSelectedListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$NewListSelectedAction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView$NewListSelectedAction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Assignment 2 nojavafx/com/tylerkv/ui/views/ToDoListView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tylerkv/application/listitems/GoalListItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/application/listitems/GoalListItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingItemFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingItemFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingListFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingListFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java" afterDir="false" />
@@ -16,89 +52,158 @@
       <change beforePath="$PROJECT_DIR$/src/com/tylerkv/ui/views/ShoppingListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/views/ShoppingListView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tylerkv/ui/views/SideBarView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/views/SideBarView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/tylerkv/ui/views/ToDoListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tylerkv/ui/views/ToDoListView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tests/ToDoListItemTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ToDoListItemTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="ToDoListView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/ToDoListView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2461">
-              <caret line="305" column="69" selection-start-line="305" selection-start-column="69" selection-end-line="305" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShoppingListView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/ShoppingListView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="271" column="70" lean-forward="true" selection-start-line="271" selection-start-column="70" selection-end-line="271" selection-end-column="70" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="List.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/baseobjects/List.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="91" selection-start-line="91" selection-end-line="91" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddToDoItemFrame.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="164" column="70" selection-start-line="164" selection-start-column="70" selection-end-line="164" selection-end-column="70" />
-              <folding>
-                <element signature="e#5906#5907#0" expanded="true" />
-                <element signature="e#5974#5975#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddToDoListFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoListFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="88" column="10" lean-forward="true" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddShoppingItemFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingItemFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="37" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddShoppingListFrame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingListFrame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/ToDoListView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="396">
+                  <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/SideBarView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="403">
+                  <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
+                  <folding>
+                    <element signature="e#4571#4572#0" expanded="true" />
+                    <element signature="e#4624#4625#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/MainView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="480">
+                  <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/ShoppingListView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="287">
+                  <caret line="82" selection-start-line="82" selection-end-line="83" selection-end-column="65" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListDriver.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="391">
+                  <caret line="215" selection-start-line="215" selection-end-line="215" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/GoalListView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="299">
+                  <caret line="397" column="38" selection-start-line="397" selection-start-column="38" selection-end-line="397" selection-end-column="38" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/TeamListView.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="385">
+                  <caret line="340" column="78" selection-start-line="340" selection-start-column="78" selection-end-line="340" selection-end-column="78" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddTeamItemFrame.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="551">
+                  <caret line="150" column="13" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddTeamListFrame.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/GoalListItem.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1319">
+                  <caret line="115" column="42" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="714">
+                  <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/TeamListItem.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="66" selection-start-line="66" selection-end-line="66" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/TeamList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="170">
+                  <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -109,23 +214,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GoalList</find>
-      <find>StartDate</find>
-      <find>EndDate</find>
-      <find>testItem1</find>
-      <find>testItem2</find>
-      <find>TeamList</find>
-      <find>priority</find>
-      <find>ToDoList</find>
-      <find>boolean</find>
-      <find>Inva</find>
-      <find>InvalidPar</find>
-      <find>InvalidParameterException</find>
-      <find>Iterator</find>
-      <find>SwingControlDemo</find>
-      <find>l</find>
-      <find>mainFrame</find>
-      <find>owner</find>
       <find>parentFrame</find>
       <find>View</find>
       <find>MainView</find>
@@ -139,23 +227,25 @@
       <find>userInputDate</find>
       <find>userInputStartDate</find>
       <find>addShoppingItemFrame</find>
+      <find>convertedTime</find>
+      <find>new JLabel</find>
+      <find>= new JLabel</find>
+      <find>ToDoListItem</find>
+      <find>AddToDoItemFrame</find>
+      <find>ShoppingListView</find>
+      <find>addShoppingListFrame</find>
+      <find>GoalListView</find>
+      <find>getItem</find>
+      <find>goalListTree.getLastSelectedPathComponent().toString()</find>
+      <find>getSelectedValueString</find>
+      <find>paths</find>
+      <find>ToDoLists</find>
+      <find>ToDoList</find>
+      <find>TODO</find>
+      <find>ToDoListView</find>
+      <find>toDoListView</find>
     </findStrings>
     <replaceStrings>
-      <replace>user</replace>
-      <replace>currentUserList</replace>
-      <replace>LocalDateTime</replace>
-      <replace>ToDoListItem</replace>
-      <replace>GoalListItem</replace>
-      <replace>completionRangeStartDate</replace>
-      <replace>completionRangeEndDate</replace>
-      <replace>testItem2</replace>
-      <replace>testItem3</replace>
-      <replace>testItem4</replace>
-      <replace>TeamListItem</replace>
-      <replace>listPriority</replace>
-      <replace>Boolean</replace>
-      <replace>IllegalArgumentException</replace>
-      <replace>TeamList</replace>
       <replace>mainView</replace>
       <replace>this</replace>
       <replace>parentView</replace>
@@ -171,6 +261,21 @@
       <replace>userInputStartDate</replace>
       <replace>userInputEndDate</replace>
       <replace>addToDoItemFrame</replace>
+      <replace>convertedDateTime</replace>
+      <replace>.setText</replace>
+      <replace>GoalList</replace>
+      <replace>GoalListItem</replace>
+      <replace>GOAL</replace>
+      <replace>AddGoalItemFrame</replace>
+      <replace>addGoalListFrame</replace>
+      <replace>GoalListView</replace>
+      <replace>goalListView</replace>
+      <replace>getSelectedValueString()</replace>
+      <replace>TeamLists</replace>
+      <replace>TeamList</replace>
+      <replace>TEAM</replace>
+      <replace>TeamListView</replace>
+      <replace>teamListView</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -179,17 +284,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/tests/ListTests.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListType.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/utilities/Status.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListItemType.java" />
-        <option value="$PROJECT_DIR$/src/tests/ShoppingListItemTests.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/listitems/ShoppingListItem.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListSettings.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/lists/ShoppingList.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java" />
         <option value="$PROJECT_DIR$/src/tests/TestDriver.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/listitems/GoalListItem.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/application/lists/TeamList.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/application/lists/ToDoList.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/application/utilities/SortByDateAndPriority.java" />
@@ -215,86 +310,119 @@
         <option value="$PROJECT_DIR$/src/com/tylerkv/ui/Driver.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddListFrame.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddItemFrame.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListDriver.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/application/baseobjects/List.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/application/baseobjects/ListItem.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/MainFrame.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/TodoListView.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/MainView.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/SideBarView.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/application/listitems/ToDoListItem.java" />
         <option value="$PROJECT_DIR$/src/tests/ToDoListItemTests.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingItemFrame.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingListFrame.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoListFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingListFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingItemFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddGoalListFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddGoalItemFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListDriver.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/application/listitems/GoalListItem.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/ShoppingListView.java" />
         <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/ToDoListView.java" />
-        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/GoalListView.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddViewItemFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddViewListFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/SideBarView.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/MainView.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddTeamListFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddTeamItemFrame.java" />
+        <option value="$PROJECT_DIR$/src/com/tylerkv/ui/views/TeamListView.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-9" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
     <option name="width" value="975" />
-    <option name="height" value="1049" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="baseobjects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="listitems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="lists" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
+              <item name="utilities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
               <item name="frames" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
@@ -302,8 +430,8 @@
               <item name="creation" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Assignment 2 nojavafx" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Assignment 2 nojavafx" type="462c0819:PsiDirectoryNode" />
+              <item name="Checklists" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Checklists" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="tylerkv" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
@@ -318,7 +446,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549528580395" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549675102665" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/external libs/jcalendar/lib" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -353,6 +481,9 @@
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -374,142 +505,42 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.32837406" />
-      <window_info anchor="right" id="Palette&#9;" order="1" />
-      <window_info id="Image Layers" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.21253985" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32943678" />
-      <window_info id="Capture Tool" order="3" />
       <window_info id="Designer" order="0" />
-      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.128125" />
-      <window_info id="Learn" order="2" />
-      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="1" />
-      <window_info anchor="right" id="Theme Preview" order="2" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.34431455" />
+      <window_info id="Learn" order="2" />
+      <window_info id="Capture Tool" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.24947807" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="right" id="Maven" order="8" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info id="Image Layers" order="5" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.12937063" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32943678" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.3279678" />
       <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32943678" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.21227364" />
+      <window_info active="true" anchor="bottom" id="Debug" order="7" visible="true" weight="0.34406438" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Capture Analysis" order="0" />
+      <window_info anchor="right" id="Palette&#9;" order="1" />
+      <window_info anchor="right" id="Theme Preview" order="2" />
+      <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.24947807" />
+      <window_info anchor="right" id="Maven" order="8" />
     </layout>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java</url>
-          <line>176</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java</url>
-          <line>169</line>
-          <properties />
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="7" />
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/ShoppingListView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/ToDoListItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/ToDoList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/baseobjects/ListItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
-          <caret line="99" column="65" lean-forward="true" selection-start-line="99" selection-start-column="65" selection-end-line="99" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/SideBarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#4065#4066#0" expanded="true" />
-            <element signature="e#4099#4100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListItemType.java" />
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListSettings.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/TeamList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListType.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -528,16 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/GoalListItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -633,16 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/TeamListItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="75" column="59" lean-forward="true" selection-start-line="75" selection-start-column="59" selection-end-line="75" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -667,37 +678,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/LoginFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/ShoppingListItem.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListDriver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1295">
-          <caret line="247" column="42" lean-forward="true" selection-start-line="247" selection-start-column="42" selection-end-line="247" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -714,53 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/MainView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="45" column="27" lean-forward="true" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/SideBarView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="49" column="41" lean-forward="true" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-          <folding>
-            <element signature="e#4065#4066#0" expanded="true" />
-            <element signature="e#4099#4100#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/MainFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/ToDoList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/ToDoListItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
-            <element signature="e#575#576#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/ToDoListItemTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
@@ -771,31 +708,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingItemFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="37" selection-end-column="84" />
+        <state relative-caret-position="366">
+          <caret line="166" column="49" lean-forward="true" selection-start-line="166" selection-start-column="49" selection-end-line="166" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+        <state relative-caret-position="374">
+          <caret line="90" column="16" selection-start-line="90" selection-start-column="16" selection-end-line="90" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddShoppingItemFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="114" column="54" lean-forward="true" selection-start-line="114" selection-start-column="54" selection-end-line="114" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoListFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="88" column="10" lean-forward="true" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+        <state relative-caret-position="724">
+          <caret line="103" column="16" selection-start-line="103" selection-start-column="16" selection-end-line="103" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/LoginFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/MainFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddGoalItemFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="180" selection-start-line="180" selection-end-line="180" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddGoalListFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="92" column="66" selection-start-line="92" selection-start-column="66" selection-end-line="92" selection-end-column="66" />
+          <folding>
+            <element signature="e#2836#2837#0" expanded="true" />
+            <element signature="e#2904#2905#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/baseobjects/List.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
+        <state relative-caret-position="-959">
           <caret line="91" selection-start-line="91" selection-end-line="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/utilities/ListDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="215" selection-start-line="215" selection-end-line="215" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -804,26 +800,118 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/ShoppingListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="271" column="70" lean-forward="true" selection-start-line="271" selection-start-column="70" selection-end-line="271" selection-end-column="70" />
+        <state relative-caret-position="287">
+          <caret line="82" selection-start-line="82" selection-end-line="83" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/GoalList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="54" column="51" selection-start-line="54" selection-start-column="51" selection-end-line="54" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/ToDoListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2461">
-          <caret line="305" column="69" selection-start-line="305" selection-start-column="69" selection-end-line="305" selection-end-column="69" />
+        <state relative-caret-position="396">
+          <caret line="98" column="57" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddToDoItemFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/GoalListView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="164" column="70" selection-start-line="164" selection-start-column="70" selection-end-line="164" selection-end-column="70" />
+        <state relative-caret-position="299">
+          <caret line="397" column="38" selection-start-line="397" selection-start-column="38" selection-end-line="397" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/ToDoListItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="101" column="5" lean-forward="true" selection-start-line="101" selection-start-column="5" selection-end-line="101" selection-end-column="5" />
           <folding>
-            <element signature="e#5906#5907#0" expanded="true" />
-            <element signature="e#5974#5975#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/ToDoList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/lists/TeamList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/SideBarView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="57" column="58" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
+          <folding>
+            <element signature="e#4571#4572#0" expanded="true" />
+            <element signature="e#4624#4625#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/MainView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="46" column="39" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddTeamListFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/frames/creation/AddTeamItemFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="150" column="13" selection-start-line="150" selection-start-column="13" selection-end-line="150" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/GoalListItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1319">
+          <caret line="115" column="42" selection-start-line="115" selection-start-column="42" selection-end-line="115" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/application/listitems/TeamListItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/tylerkv/ui/views/TeamListView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="340" column="78" selection-start-line="340" selection-start-column="78" selection-end-line="340" selection-end-column="78" />
         </state>
       </provider>
     </entry>

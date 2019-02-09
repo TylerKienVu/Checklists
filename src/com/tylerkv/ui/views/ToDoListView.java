@@ -5,6 +5,7 @@ import com.tylerkv.application.listitems.ToDoListItem;
 import com.tylerkv.application.lists.ToDoList;
 import com.tylerkv.application.utilities.ListDriver;
 import com.tylerkv.application.utilities.ListType;
+import com.tylerkv.application.utilities.Status;
 import com.tylerkv.ui.frames.creation.AddShoppingItemFrame;
 import com.tylerkv.ui.frames.creation.AddToDoItemFrame;
 import com.tylerkv.ui.frames.creation.AddToDoListFrame;
@@ -25,6 +26,7 @@ public class ToDoListView extends JPanel {
     private JButton deleteListButton;
     private JButton addItemButton;
     private JButton deleteItemButton;
+    private JButton toggleItemButton;
     private JComboBox<String> listsComboBox;
     private JScrollPane itemListScrollPane;
     private JList itemList;
@@ -34,6 +36,8 @@ public class ToDoListView extends JPanel {
     private JLabel itemPriorityLabel;
     private JLabel startDateLabel;
     private JLabel endDateLabel;
+
+    // TODO: Add sequential date checking
 
     public ToDoListView(MainView parentView, ListDriver listDriver) {
         this.listDriver = listDriver;
@@ -55,20 +59,14 @@ public class ToDoListView extends JPanel {
     public void createItem(String itemName, String desc, LocalDateTime start, LocalDateTime end, double priority) {
         ToDoListItem itemToAdd;
         try {
-            if(start == null && priority == -1) {
-                itemToAdd = new ToDoListItem(itemName, desc, end);
+            if(end == null) {
+                itemToAdd = new ToDoListItem(itemName, desc, priority);
             }
-            else if (start != null && priority == -1) {
-                itemToAdd = new ToDoListItem(itemName, desc, start, end);
-            }
-            else if (start == null && priority != -1) {
+            else if(start == null) {
                 itemToAdd = new ToDoListItem(itemName, desc, end, priority);
             }
-            else if (start != null && priority != -1) {
-                itemToAdd = new ToDoListItem(itemName, desc, start, end, priority);
-            }
             else {
-                throw new IllegalArgumentException("None of the constructors were hit");
+                itemToAdd = new ToDoListItem(itemName, desc, start, end, priority);
             }
             this.listDriver.addItemToList(listsComboBox.getSelectedItem().toString(), ListType.TODO, itemToAdd);
             this.loadToDoListItems();
@@ -87,9 +85,18 @@ public class ToDoListView extends JPanel {
     }
 
     private void deleteSelectedItem() {
-        String itemToDelete = (String)itemList.getSelectedValue();
+        String itemString = (String)itemList.getSelectedValue();
+        String itemToDelete = itemString.split(" ")[0].strip();
 
         this.listDriver.deleteItemFromList(listsComboBox.getSelectedItem().toString(), ListType.TODO,itemToDelete);
+        this.loadToDoListItems();
+    }
+
+    private void toggleSelectedItem() {
+        String itemString = (String)itemList.getSelectedValue();
+        String itemToComplete = itemString.split(" ")[0].strip();
+
+        this.listDriver.toggleItemComplete(listsComboBox.getSelectedItem().toString(), ListType.TODO, itemToComplete);
         this.loadToDoListItems();
     }
 
@@ -108,7 +115,14 @@ public class ToDoListView extends JPanel {
             ArrayList<ListItem> itemList = selectedToDoList.getItemList();
             for(int i = 0; i < itemList.size(); i++) {
                 ToDoListItem currentItem = (ToDoListItem) itemList.get(i);
-                String stringToAdd = String.format("%s", currentItem.getItemName());
+                String stringToAdd;
+                if(currentItem.getStatus() == Status.COMPELTE) {
+                    stringToAdd = String.format("%-5s COMPLETE", currentItem.getItemName());
+                }
+                else {
+                    stringToAdd = String.format("%s", currentItem.getItemName());
+                }
+
                 listModel.addElement(stringToAdd);
             }
         }
@@ -143,6 +157,10 @@ public class ToDoListView extends JPanel {
         deleteItemButton = new JButton("Delete Item");
         deleteItemButton.setActionCommand("DELETE ITEM");
         deleteItemButton.addActionListener(new DeleteItemAction());
+
+        toggleItemButton = new JButton("Toggle Complete");
+        toggleItemButton.setActionCommand("TOGGLE");
+        toggleItemButton.addActionListener(new ToggleItemAction());
 
         listsComboBox = new JComboBox<>();
         listsComboBox.setMaximumSize(new Dimension(400,5));
@@ -182,7 +200,8 @@ public class ToDoListView extends JPanel {
                 .addGap(10)
                 .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                     .addComponent(addItemButton)
-                    .addComponent(deleteItemButton))
+                    .addComponent(deleteItemButton)
+                    .addComponent(toggleItemButton))
                 .addGap(10))
             .addGroup(groupLayout.createSequentialGroup()
                 .addGap(10)
@@ -209,7 +228,9 @@ public class ToDoListView extends JPanel {
                 .addGroup(groupLayout.createSequentialGroup()
                     .addComponent(addItemButton)
                     .addGap(5)
-                    .addComponent(deleteItemButton)))
+                    .addComponent(deleteItemButton)
+                    .addGap(5)
+                    .addComponent(toggleItemButton)))
             .addGroup(groupLayout.createSequentialGroup()
                 .addComponent(itemNameLabel)
                 .addGap(5)
@@ -276,6 +297,15 @@ public class ToDoListView extends JPanel {
         }
     }
 
+    private class ToggleItemAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(itemList.getSelectedValue() != null) {
+                toggleSelectedItem();
+            }
+        }
+    }
+
     private class NewListSelectedAction extends AbstractAction {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -289,23 +319,32 @@ public class ToDoListView extends JPanel {
         @Override
         public void valueChanged(ListSelectionEvent e) {
             if(!e.getValueIsAdjusting() && itemList.getSelectedValue() != null) {
-                //Process string and remove Qty
-                String selectedString = (String) itemList.getSelectedValue();
-                String selectedItemString = selectedString.split(" ")[0];
+                String itemString = (String)itemList.getSelectedValue();
+                String selectedString = itemString.split(" ")[0].strip();
 
                 ToDoList selectedToDoList = (ToDoList) listDriver.getList(listsComboBox.getSelectedItem().toString(), ListType.TODO);
-                ToDoListItem selectedItem = (ToDoListItem) selectedToDoList.getItem(selectedItemString);
+                ToDoListItem selectedItem = (ToDoListItem) selectedToDoList.getItem(selectedString);
 
-
-                // TODO: Add new labels for todo item
                 LocalDateTime startDate = selectedItem.getCompletionRangeStartDate();
                 LocalDateTime endDate = selectedItem.getCompletionRangeEndDate();
 
                 itemNameLabel.setText("<html>Name: " + selectedItem.getItemName() + "</html>");
-                startDateLabel.setText(String.format("<html>Completion Range Date Start: %d-%d-%d </html>", startDate.getMonth(), startDate.getDayOfMonth(), startDate.getYear()));
-                endDateLabel.setText(String.format("<html>Completion Range Date End: %d-%d-%d </html>", endDate.getMonth(), endDate.getDayOfMonth(), endDate.getYear()));
+                if(startDate != null){
+                    startDateLabel.setText(String.format("<html>Completion Range Date Start: %d-%d-%d </html>", startDate.getMonthValue(), startDate.getDayOfMonth(), startDate.getYear()));
+                }
+                if(endDate != null) {
+                    endDateLabel.setText(String.format("<html>Completion Range Date End: %d-%d-%d </html>", endDate.getMonthValue(), endDate.getDayOfMonth(), endDate.getYear()));
+                }
                 itemPriorityLabel.setText("<html>Priority: " + selectedItem.getItemPriority() + "</html>");
                 itemDescLabel.setText("<html>Description: " + selectedItem.getDescription() + "</html>");
+            }
+            else {
+                // Reset labels if not targeting anything
+                itemNameLabel.setText("<html>Name: </html>");
+                itemDescLabel.setText("<html>Description: </html>");
+                itemPriorityLabel.setText("<html>Priority: </html>");
+                startDateLabel.setText("<html>Completion Range Date Start: </html>");
+                endDateLabel.setText("<html>Completion Range Date End: </html>");
             }
         }
     }

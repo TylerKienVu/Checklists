@@ -101,7 +101,7 @@ public class AddToDoListFrame extends JFrame {
         public void actionPerformed(ActionEvent e) {
             // TODO: Add tooltip if null
 
-            if(listNameTextField.getText() != null) {
+            if(!listNameTextField.getText().equals("")) {
                 ToDoListView.createList(listNameTextField.getText(), (double)numberSpinner.getValue());
                 addToDoListFrame.dispose();
             }
