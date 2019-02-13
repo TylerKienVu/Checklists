@@ -25,7 +25,7 @@ public class Driver {
 
     public void test() {
         currentUser = new ListUser("Tyler", "password");
-        listDriver = new ListDriver(currentUser);
+        listDriver = ListDriver.getInstance(currentUser);
         mainFrame = new MainFrame(this, listDriver);
     }
 
@@ -37,6 +37,6 @@ public class Driver {
 
     private void initAppInstance(String username, String password) {
         currentUser = new ListUser(username, password);
-        listDriver = new ListDriver(currentUser);
+        listDriver = ListDriver.getInstance(currentUser);
     }
 }

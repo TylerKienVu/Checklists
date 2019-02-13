@@ -85,19 +85,26 @@ public class ToDoListView extends JPanel {
     }
 
     private void deleteSelectedItem() {
-        String itemString = (String)itemList.getSelectedValue();
-        String itemToDelete = itemString.split(" ")[0].strip();
+        String itemToDelete = getSelectedItemString();
 
         this.listDriver.deleteItemFromList(listsComboBox.getSelectedItem().toString(), ListType.TODO,itemToDelete);
         this.loadToDoListItems();
     }
 
     private void toggleSelectedItem() {
-        String itemString = (String)itemList.getSelectedValue();
-        String itemToComplete = itemString.split(" ")[0].strip();
+        String itemToComplete = getSelectedItemString();
 
         this.listDriver.toggleItemComplete(listsComboBox.getSelectedItem().toString(), ListType.TODO, itemToComplete);
         this.loadToDoListItems();
+    }
+
+    private String getSelectedItemString() {
+        String rawString = (String)itemList.getSelectedValue();
+        int indexOfComplete = rawString.indexOf("COMPLETE");
+        if (indexOfComplete == -1) {
+            return rawString.trim();
+        }
+        return rawString.substring(0, indexOfComplete).trim();
     }
 
     private void loadToDoLists() {
@@ -319,8 +326,7 @@ public class ToDoListView extends JPanel {
         @Override
         public void valueChanged(ListSelectionEvent e) {
             if(!e.getValueIsAdjusting() && itemList.getSelectedValue() != null) {
-                String itemString = (String)itemList.getSelectedValue();
-                String selectedString = itemString.split(" ")[0].strip();
+                String selectedString = getSelectedItemString();
 
                 ToDoList selectedToDoList = (ToDoList) listDriver.getList(listsComboBox.getSelectedItem().toString(), ListType.TODO);
                 ToDoListItem selectedItem = (ToDoListItem) selectedToDoList.getItem(selectedString);

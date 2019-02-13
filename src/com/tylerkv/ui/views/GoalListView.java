@@ -136,7 +136,11 @@ public class GoalListView extends JPanel {
         if (goalListTree.getLastSelectedPathComponent() != null) {
             // In case item has completed text
             String rawString =  goalListTree.getLastSelectedPathComponent().toString();
-            return rawString.split(" ")[0].strip();
+            int indexOfComplete = rawString.indexOf("COMPLETE");
+            if (indexOfComplete == -1) {
+                return rawString.trim();
+            }
+            return rawString.substring(0, indexOfComplete).trim();
         }
         return "";
     }
@@ -146,7 +150,13 @@ public class GoalListView extends JPanel {
         Object[] paths = goalListTree.getSelectionPath().getPath();
         for(int i = 0; i < paths.length; i++) {
             String rawString =  paths[i].toString();
-            paths[i] = rawString.split(" ")[0].strip();
+            int indexOfComplete = rawString.indexOf("COMPLETE");
+            if (indexOfComplete == -1) {
+                paths[i] = rawString.trim();
+            }
+            else {
+                paths[i] = rawString.substring(0, indexOfComplete).trim();
+            }
         }
         return paths;
     }

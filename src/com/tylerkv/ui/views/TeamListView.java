@@ -87,19 +87,26 @@ public class TeamListView extends JPanel {
     }
 
     private void deleteSelectedItem() {
-        String itemString = (String)itemList.getSelectedValue();
-        String itemToDelete = itemString.split(" ")[0].strip();
+        String itemToDelete = getSelectedItemString();
 
         this.listDriver.deleteItemFromList(listsComboBox.getSelectedItem().toString(), ListType.TEAM,itemToDelete);
         this.loadTeamListItems();
     }
 
     private void toggleSelectedItem() {
-        String itemString = (String)itemList.getSelectedValue();
-        String itemToComplete = itemString.split(" ")[0].strip();
+        String itemToComplete = getSelectedItemString();
 
         this.listDriver.toggleItemComplete(listsComboBox.getSelectedItem().toString(), ListType.TEAM, itemToComplete);
         this.loadTeamListItems();
+    }
+
+    private String getSelectedItemString() {
+        String rawString = (String)itemList.getSelectedValue();
+        int indexOfComplete = rawString.indexOf("COMPLETE");
+        if (indexOfComplete == -1) {
+            return rawString.trim();
+        }
+        return rawString.substring(0, indexOfComplete).trim();
     }
 
     private void loadTeamLists() {
@@ -323,8 +330,7 @@ public class TeamListView extends JPanel {
         @Override
         public void valueChanged(ListSelectionEvent e) {
             if(!e.getValueIsAdjusting() && itemList.getSelectedValue() != null) {
-                String itemString = (String)itemList.getSelectedValue();
-                String selectedString = itemString.split(" ")[0].strip();
+                String selectedString = getSelectedItemString();
 
                 TeamList selectedTeamList = (TeamList) listDriver.getList(listsComboBox.getSelectedItem().toString(), ListType.TEAM);
                 TeamListItem selectedItem = (TeamListItem) selectedTeamList.getItem(selectedString);

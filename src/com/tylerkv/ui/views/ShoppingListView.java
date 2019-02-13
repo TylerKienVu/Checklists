@@ -70,21 +70,23 @@ public class ShoppingListView extends JPanel {
     }
 
     private void deleteSelectedItem() {
-        // Get rid of extra info in name
-        String itemString = (String)itemList.getSelectedValue();
-        String itemToDelete = itemString.split("-")[0].strip();
+        String itemToDelete = getSelectedItemString();
 
         this.listDriver.deleteItemFromList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING,itemToDelete);
         this.loadShoppingListItems();
     }
 
     private void toggleSelectedItem() {
-        // Get rid extra info in name
-        String itemString = (String)itemList.getSelectedValue();
-        String itemToComplete = itemString.split("-")[0].strip();
+        String itemToComplete = getSelectedItemString();
 
         this.listDriver.toggleItemComplete(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING, itemToComplete);
         this.loadShoppingListItems();
+    }
+
+    private String getSelectedItemString() {
+        String rawString = (String)itemList.getSelectedValue();
+        String splitString = rawString.split("-")[0];
+        return splitString.trim();
     }
 
     private void loadShoppingLists() {
@@ -298,9 +300,7 @@ public class ShoppingListView extends JPanel {
         @Override
         public void valueChanged(ListSelectionEvent e) {
             if(!e.getValueIsAdjusting() && itemList.getSelectedValue() != null) {
-                //Process string and remove Qty
-                String selectedString = (String) itemList.getSelectedValue();
-                String selectedItemString = selectedString.split("-")[0].strip();
+                String selectedItemString = getSelectedItemString();
 
                 ShoppingList selectedShoppingList = (ShoppingList) listDriver.getList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING);
                 ShoppingListItem selectedItem = (ShoppingListItem) selectedShoppingList.getItem(selectedItemString);

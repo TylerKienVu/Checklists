@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+// Follows Singleton pattern
+
 public class ListDriver {
     private ArrayList<ShoppingList> shoppingLists;
     private ArrayList<ToDoList> toDoLists;
@@ -18,16 +20,21 @@ public class ListDriver {
     private ArrayList<TeamList> teamLists;
     private ListUser owner;
     private Map<ListType, Boolean> enabledLists;
+    private static ListDriver listDriverInstance;
 
-    // TODO: Change listdriver to be friends with lists so only it can get direct access
-
-    // GoalList will not be instantiated until user decides they want one
-    public ListDriver(ListUser owner) {
+    private ListDriver(ListUser owner) {
         this.setOwner(owner);
         this.setShoppingLists(new ArrayList<ShoppingList>());
         this.setToDoLists(new ArrayList<ToDoList>());
         this.setTeamLists(new ArrayList<TeamList>());
         this.initializeEnabledLists();
+    }
+
+    public static ListDriver getInstance(ListUser owner) {
+        if (listDriverInstance == null) {
+            listDriverInstance = new ListDriver(owner);
+        }
+        return listDriverInstance;
     }
 
     // GETTERS AND SETTERS

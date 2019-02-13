@@ -18,7 +18,7 @@ public class ListDriverTests {
     }
     public static void testListDriverConstructors() {
         ListUser testUser = new ListUser("tester", "pass");
-        ListDriver testDriver = new ListDriver(testUser);
+        ListDriver testDriver = ListDriver.getInstance(testUser);
 
         assert testDriver.getOwner().equals(testUser);
     }
@@ -27,7 +27,7 @@ public class ListDriverTests {
     }
     public static void testListDriverMethods() {
         ListUser testUser = new ListUser("tester", "pass");
-        ListDriver testDriver = new ListDriver(testUser);
+        ListDriver testDriver = ListDriver.getInstance(testUser);
 
         testDriver.addShoppingList("test");
         testDriver.addShoppingList("test2");
