@@ -395,6 +395,7 @@ public class GoalListView extends JPanel {
             DefaultMutableTreeNode selectedNode = (DefaultMutableTreeNode) goalListTree.getLastSelectedPathComponent();
             if(selectedNode != null && !selectedNode.toString().equals("empty")) {
                 if(selectedNode.toString().equals(listDriver.getGoalList().getListName())) {
+                    deleteItemButton.setEnabled(false);
                     toggleItemButton.setEnabled(false);
                     return;
                 }

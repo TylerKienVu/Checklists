@@ -23,6 +23,12 @@ public class LoginView extends JPanel {
         initLoginPanel();
     }
 
+    public void login() {
+        if (!usernameTextField.getText().equals("") || !passwordTextField.getText().equals("")) {
+            parentFrame.login(usernameTextField.getText(), passwordTextField.getText());
+        }
+    }
+
     private void initLoginPanel() {
         this.initComponents();
         this.initLayout();
@@ -78,9 +84,7 @@ public class LoginView extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent e) {
-            if (!usernameTextField.getText().equals("") || !passwordTextField.getText().equals("")){
-                parentFrame.login(usernameTextField.getText(), passwordTextField.getText());
-            }
+            login();
         }
     }
 }

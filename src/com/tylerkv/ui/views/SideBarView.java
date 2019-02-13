@@ -67,7 +67,7 @@ public class SideBarView extends JPanel {
         // Process profile picture to fit label
         BufferedImage rawImage;
         try {
-            rawImage = ImageIO.read(new File("src/resources/default-profile-pic.png"));
+            rawImage = ImageIO.read(new File("resources/default-profile-pic.png"));
             // Resize buffered image
             Image resizedImage = rawImage.getScaledInstance(profilePictureLabel.getWidth(), profilePictureLabel.getHeight(), Image.SCALE_SMOOTH);
             ImageIcon profilePicture = new ImageIcon(resizedImage);

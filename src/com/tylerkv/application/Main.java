@@ -32,7 +32,7 @@ public class Main {
         //Safety start
         EventQueue.invokeLater(() -> {
             Driver driver = new Driver();
-            driver.test();
+            driver.start();
         });
 
     }
