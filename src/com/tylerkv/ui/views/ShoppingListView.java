@@ -3,6 +3,7 @@ package com.tylerkv.ui.views;
 import com.tylerkv.application.baseobjects.ListItem;
 import com.tylerkv.application.listitems.ShoppingListItem;
 import com.tylerkv.application.lists.ShoppingList;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListDriver;
 import com.tylerkv.application.utilities.ListType;
 import com.tylerkv.application.utilities.Status;
@@ -52,7 +53,7 @@ public class ShoppingListView extends JPanel {
 
     public void createItem(String itemName, String desc, int quantity) {
         try {
-            ShoppingListItem itemToAdd = new ShoppingListItem(itemName, desc, quantity);
+            ShoppingListItem itemToAdd = new ShoppingListItem(new ItemDetails(itemName, desc), quantity);
             this.listDriver.addItemToList(listsComboBox.getSelectedItem().toString(), ListType.SHOPPING, itemToAdd);
             this.loadShoppingListItems();
         }

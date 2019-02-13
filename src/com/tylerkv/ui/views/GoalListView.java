@@ -5,6 +5,7 @@ import com.tylerkv.application.listitems.GoalListItem;
 import com.tylerkv.application.listitems.ToDoListItem;
 import com.tylerkv.application.lists.GoalList;
 import com.tylerkv.application.lists.ToDoList;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListDriver;
 import com.tylerkv.application.utilities.ListType;
 import com.tylerkv.application.utilities.Status;
@@ -85,7 +86,7 @@ public class GoalListView extends JPanel {
                 Object[] splicedPaths = Arrays.copyOfRange(paths, 1, paths.length);
 
                 // TODO: Change listdriver to be friends with lists so only it can get direct access
-                this.listDriver.getGoalList().addItemWithChildPath(itemToAdd, splicedPaths);
+                this.listDriver.getGoalList().addGoalListItem(itemToAdd, splicedPaths);
             }
             this.loadGoalListItems();
         }
@@ -96,13 +97,13 @@ public class GoalListView extends JPanel {
 
     private GoalListItem constructGoalListItem(String itemName, String desc, LocalDateTime start, LocalDateTime end, double priority) {
         if(end == null) {
-            return new GoalListItem(itemName, desc, priority);
+            return new GoalListItem(new ItemDetails(itemName, desc), priority);
         }
         else if(start == null) {
-            return new GoalListItem(itemName, desc, end, priority);
+            return new GoalListItem(new ItemDetails(itemName, desc), end, priority);
         }
         else {
-            return new GoalListItem(itemName, desc, start, end, priority);
+            return new GoalListItem(new ItemDetails(itemName, desc), start, end, priority);
         }
     }
 

@@ -4,11 +4,12 @@ import com.tylerkv.application.baseobjects.List;
 import com.tylerkv.application.baseobjects.ListItem;
 import com.tylerkv.application.utilities.ListType;
 import com.tylerkv.application.utilities.ListUser;
+import com.tylerkv.application.utilities.PriorityList;
 import com.tylerkv.application.utilities.SortByDateAndPriority;
 
 import java.util.ArrayList;
 
-public class ToDoList extends List {
+public class ToDoList extends List implements PriorityList {
     private double listPriority;
 
     public ToDoList(String listName, ListUser owner){

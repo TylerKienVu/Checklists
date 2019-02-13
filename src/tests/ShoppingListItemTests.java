@@ -1,6 +1,7 @@
 package tests;
 
 import com.tylerkv.application.listitems.ShoppingListItem;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListType;
 import com.tylerkv.application.utilities.Status;
 
@@ -11,7 +12,7 @@ public class ShoppingListItemTests {
         testShoppingListItemMethods();
     }
     public static void testShoppingListItemConstructors() {
-        ShoppingListItem testItem = new ShoppingListItem("Test Item", "This is a test item", 5);
+        ShoppingListItem testItem = new ShoppingListItem(new ItemDetails("Test Item", "This is a test item"), 5);
 
         assert testItem.getListItemType() == ListType.SHOPPING;
         assert testItem.getStatus() == Status.INCOMPLETE;
@@ -22,14 +23,14 @@ public class ShoppingListItemTests {
     }
 
     public static void testShoppingListItemGettersAndSetters() {
-        ShoppingListItem testItem = new ShoppingListItem("Test Item", "This is a test item", 5);
+        ShoppingListItem testItem = new ShoppingListItem(new ItemDetails("Test Item", "This is a test item"), 5);
         testItem.setIsMutable(false);
 
         assert !testItem.getIsMutable();
     }
 
     public static void testShoppingListItemMethods() {
-        ShoppingListItem testItem = new ShoppingListItem("Test Item", "This is a test item", 5);
+        ShoppingListItem testItem = new ShoppingListItem(new ItemDetails("Test Item", "This is a test item"), 5);
 
         testItem.toggleComplete();
 

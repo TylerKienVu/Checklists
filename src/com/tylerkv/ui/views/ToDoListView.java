@@ -3,6 +3,7 @@ package com.tylerkv.ui.views;
 import com.tylerkv.application.baseobjects.ListItem;
 import com.tylerkv.application.listitems.ToDoListItem;
 import com.tylerkv.application.lists.ToDoList;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListDriver;
 import com.tylerkv.application.utilities.ListType;
 import com.tylerkv.application.utilities.Status;
@@ -60,13 +61,13 @@ public class ToDoListView extends JPanel {
         ToDoListItem itemToAdd;
         try {
             if(end == null) {
-                itemToAdd = new ToDoListItem(itemName, desc, priority);
+                itemToAdd = new ToDoListItem(new ItemDetails(itemName, desc), priority);
             }
             else if(start == null) {
-                itemToAdd = new ToDoListItem(itemName, desc, end, priority);
+                itemToAdd = new ToDoListItem(new ItemDetails(itemName, desc), end, priority);
             }
             else {
-                itemToAdd = new ToDoListItem(itemName, desc, start, end, priority);
+                itemToAdd = new ToDoListItem(new ItemDetails(itemName, desc), start, end, priority);
             }
             this.listDriver.addItemToList(listsComboBox.getSelectedItem().toString(), ListType.TODO, itemToAdd);
             this.loadToDoListItems();

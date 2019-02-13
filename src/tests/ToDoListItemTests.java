@@ -1,6 +1,7 @@
 package tests;
 
 import com.tylerkv.application.listitems.ToDoListItem;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListType;
 
 import java.time.LocalDateTime;
@@ -12,15 +13,15 @@ public class ToDoListItemTests {
         testToDoListItemMethods();
     }
     public static void testToDoListItemConstructors() {
-        ToDoListItem testItem1 = new ToDoListItem("name", "desc"
+        ToDoListItem testItem1 = new ToDoListItem(new ItemDetails("name","desc")
                 , LocalDateTime.of(2019, 7, 13, 0, 0));
-        ToDoListItem testItem2 = new ToDoListItem("name", "desc"
+        ToDoListItem testItem2 = new ToDoListItem(new ItemDetails("name","desc")
                 , LocalDateTime.now()
                 , LocalDateTime.of(2019, 7, 13, 0, 0));
-        ToDoListItem testItem3 = new ToDoListItem("name", "desc"
+        ToDoListItem testItem3 = new ToDoListItem(new ItemDetails("name","desc")
                 , LocalDateTime.of(2019, 7, 13, 0, 0)
                 , .50);
-        ToDoListItem testItem4 = new ToDoListItem("name", "desc"
+        ToDoListItem testItem4 = new ToDoListItem(new ItemDetails("name","desc")
                 , LocalDateTime.now()
                 , LocalDateTime.of(2019, 7, 13, 0, 0)
                 , .50);
@@ -55,7 +56,7 @@ public class ToDoListItemTests {
     }
     public static void testToDoListItemGettersAndSetters() {
         try {
-            ToDoListItem testItem = new ToDoListItem("name", "desc"
+            ToDoListItem testItem = new ToDoListItem(new ItemDetails("name","desc")
                     , LocalDateTime.of(2019, 7, 13, 0, 0)
                     , 1.50);
         }
@@ -64,7 +65,7 @@ public class ToDoListItemTests {
         }
 
         try {
-            ToDoListItem testItem = new ToDoListItem("name", "desc"
+            ToDoListItem testItem = new ToDoListItem(new ItemDetails("name","desc")
                     , LocalDateTime.of(2019, 7, 13, 0, 0)
                     , -0.5);
         }
@@ -75,8 +76,8 @@ public class ToDoListItemTests {
     public static void testToDoListItemMethods() {
         LocalDateTime testTime1 = LocalDateTime.of(2050,7,13,0,0);
         LocalDateTime testTime2 = LocalDateTime.of(1996,7,13,0,0);
-        ToDoListItem testItem1 = new ToDoListItem("TestItem", "Desc", testTime1);
-        ToDoListItem testItem2 = new ToDoListItem("TestItem", "Desc", testTime2);
+        ToDoListItem testItem1 = new ToDoListItem(new ItemDetails("TestItem", "Desc"), testTime1);
+        ToDoListItem testItem2 = new ToDoListItem(new ItemDetails("TestItem", "Desc"), testTime2);
 
         try {
             assert testItem1.getDaysUntilDue() > 0;

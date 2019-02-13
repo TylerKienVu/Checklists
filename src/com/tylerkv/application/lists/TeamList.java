@@ -3,8 +3,9 @@ package com.tylerkv.application.lists;
 import com.tylerkv.application.baseobjects.List;
 import com.tylerkv.application.utilities.ListType;
 import com.tylerkv.application.utilities.ListUser;
+import com.tylerkv.application.utilities.PriorityList;
 
-public class TeamList extends List {
+public class TeamList extends List implements PriorityList{
     private double listPriority;
 
     public TeamList(String listName, ListUser owner) {

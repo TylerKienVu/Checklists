@@ -1,3 +1,9 @@
 // Patterns
 
 - Singleton for ListDriver
+- Template for TeamList and ToDoList
+
+// Refactoring
+
+- Extract Method for getting selectedItem
+- Introduced Object Parameter

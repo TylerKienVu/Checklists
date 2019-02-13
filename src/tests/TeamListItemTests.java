@@ -1,6 +1,7 @@
 package tests;
 
 import com.tylerkv.application.listitems.TeamListItem;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListUser;
 
 import java.time.LocalDateTime;
@@ -14,7 +15,7 @@ public class TeamListItemTests {
     }
     public static void testTeamListItemConstructors() {
         LocalDateTime testTime = LocalDateTime.of(2019,1,1,0,0);
-        TeamListItem testItem = new TeamListItem("testItem", "desc"
+        TeamListItem testItem = new TeamListItem(new ItemDetails("testItem", "desc")
                 , testTime, 0.5);
 
         assert testItem.getDeadline().equals(testTime);
@@ -27,7 +28,7 @@ public class TeamListItemTests {
     public static void testTeamListItemMethods() {
         LocalDateTime testTime = LocalDateTime.of(2030,1,1,0,0);
         ListUser testUser = new ListUser("test", "pass");
-        TeamListItem testItem = new TeamListItem("testItem", "desc"
+        TeamListItem testItem = new TeamListItem(new ItemDetails("testItem", "desc")
                 , testTime, 0.5);
         testItem.addUser(testUser);
 

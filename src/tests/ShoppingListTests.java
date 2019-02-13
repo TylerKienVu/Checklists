@@ -3,6 +3,7 @@ package tests;
 import com.tylerkv.application.baseobjects.ListItem;
 import com.tylerkv.application.listitems.ShoppingListItem;
 import com.tylerkv.application.lists.ShoppingList;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListUser;
 
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class ShoppingListTests {
     public static void testShoppingListMethods() {
         ListUser testUser = new ListUser("Tyler", "pass");
         ShoppingList testList = new ShoppingList("My Test List", testUser);
-        ShoppingListItem testItem = new ShoppingListItem("TestItem", "Desc", 1);
+        ShoppingListItem testItem = new ShoppingListItem(new ItemDetails("TestItem", "Desc"), 1);
         ArrayList<ListItem> comparisonItemList = new ArrayList<ListItem>();
         testList.addItem(testItem);
         comparisonItemList.add(testItem);

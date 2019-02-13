@@ -5,10 +5,7 @@ import com.tylerkv.application.listitems.TeamListItem;
 import com.tylerkv.application.listitems.ToDoListItem;
 import com.tylerkv.application.lists.TeamList;
 import com.tylerkv.application.lists.ToDoList;
-import com.tylerkv.application.utilities.ListDriver;
-import com.tylerkv.application.utilities.ListType;
-import com.tylerkv.application.utilities.ListUser;
-import com.tylerkv.application.utilities.Status;
+import com.tylerkv.application.utilities.*;
 import com.tylerkv.ui.frames.creation.AddTeamItemFrame;
 import com.tylerkv.ui.frames.creation.AddTeamListFrame;
 import com.tylerkv.ui.frames.creation.AddToDoItemFrame;
@@ -63,7 +60,7 @@ public class TeamListView extends JPanel {
     public void createItem(String itemName, String desc, LocalDateTime end, double priority, String assignedUsers) {
         TeamListItem itemToAdd;
         try {
-            itemToAdd = new TeamListItem(itemName, desc, end, priority);
+            itemToAdd = new TeamListItem(new ItemDetails(itemName, desc), end, priority);
             String[] splitUsers = assignedUsers.split(",");
             for(String user : splitUsers) {
                 ListUser newUser = new ListUser(user,"test");

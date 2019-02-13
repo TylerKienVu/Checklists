@@ -2,10 +2,7 @@ package tests;
 
 import com.tylerkv.application.baseobjects.ListItem;
 import com.tylerkv.application.listitems.ShoppingListItem;
-import com.tylerkv.application.utilities.ListDriver;
-import com.tylerkv.application.utilities.ListType;
-import com.tylerkv.application.utilities.ListUser;
-import com.tylerkv.application.utilities.Status;
+import com.tylerkv.application.utilities.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -37,7 +34,7 @@ public class ListDriverTests {
         testDriver.addTeamList("test");
         testDriver.addTeamList("test2", 0.8);
 
-        testDriver.addItemToList("test2", ListType.SHOPPING, new ShoppingListItem("testItem", "desc", 5));
+        testDriver.addItemToList("test2", ListType.SHOPPING, new ShoppingListItem(new ItemDetails("testItem", "desc"), 5));
         ArrayList<ListItem> items = testDriver.getShoppingLists().get(1).getItemList();
 
         assert items.size() == 1;
@@ -56,7 +53,7 @@ public class ListDriverTests {
         assert testDriver.getToDoLists().size() == 1;
         assert testDriver.getTeamLists().size() == 1;
 
-        ShoppingListItem testItem = new ShoppingListItem("item1", "desc", 5);
+        ShoppingListItem testItem = new ShoppingListItem(new ItemDetails("item1", "desc"), 5);
         testDriver.addItemToList("test", ListType.SHOPPING, testItem);
 
         assert testDriver.getShoppingLists().get(0).getItemList().get(0).getItemName().equals("item1");

@@ -1,6 +1,6 @@
 package com.tylerkv.application.listitems;
 
-import com.tylerkv.application.lists.GoalList;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListType;
 
 import java.time.LocalDateTime;
@@ -10,43 +10,43 @@ public class GoalListItem extends ToDoListItem {
     private GoalListItem parent;
     private ArrayList<GoalListItem> children;
 
-    public GoalListItem(String itemName, String description) {
-        super(itemName, description);
+    public GoalListItem(ItemDetails itemDetails) {
+        super(itemDetails);
         this.initializeGoalListItem();
     }
 
-    public GoalListItem(String itemName, String description, double priority){
-        super(itemName, description, priority);
+    public GoalListItem(ItemDetails itemDetails, double priority){
+        super(itemDetails, priority);
         this.initializeGoalListItem();
     }
 
     // No option taken
-    public GoalListItem(String itemName, String description
+    public GoalListItem(ItemDetails itemDetails
             , LocalDateTime completionRangeEndDate) {
-        super(itemName, description, completionRangeEndDate);
+        super(itemDetails, completionRangeEndDate);
         this.initializeGoalListItem();
     }
 
     // Optional range
-    public GoalListItem(String itemName, String description
+    public GoalListItem(ItemDetails itemDetails
             , LocalDateTime completionRangeStartDate, LocalDateTime completionRangeEndDate) {
-        super(itemName, description, completionRangeStartDate, completionRangeEndDate);
+        super(itemDetails, completionRangeStartDate, completionRangeEndDate);
         this.initializeGoalListItem();
     }
 
 
     // Optional priority
-    public GoalListItem(String itemName, String description
+    public GoalListItem(ItemDetails itemDetails
             , LocalDateTime completionRangeEndDate, double itemPriority) {
-        super(itemName, description, completionRangeEndDate, itemPriority);
+        super(itemDetails, completionRangeEndDate, itemPriority);
         this.initializeGoalListItem();
     }
 
     // Optional priority and range
-    public GoalListItem(String itemName, String description
+    public GoalListItem(ItemDetails itemDetails
             , LocalDateTime completionRangeStartDate
             , LocalDateTime completionRangeEndDate, double itemPriority) {
-        super(itemName, description, completionRangeStartDate
+        super(itemDetails, completionRangeStartDate
                 , completionRangeEndDate, itemPriority);
         this.initializeGoalListItem();
     }

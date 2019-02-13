@@ -1,6 +1,7 @@
 package com.tylerkv.application.listitems;
 
 import com.tylerkv.application.baseobjects.ListItem;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListType;
 import com.tylerkv.application.utilities.ListUser;
 
@@ -13,8 +14,8 @@ public class TeamListItem extends ListItem {
     private double itemPriority;
     private ArrayList<ListUser> assignedUsers;
 
-    public TeamListItem(String itemName, String description, LocalDateTime deadline, double itemPriority) {
-        super(itemName, description, ListType.TEAM);
+    public TeamListItem(ItemDetails itemDetails, LocalDateTime deadline, double itemPriority) {
+        super(itemDetails.getItemName(), itemDetails.getItemDescription(), ListType.TEAM);
         this.setDeadline(deadline);
         this.setItemPriority(itemPriority);
         this.setAssignedUsers(new ArrayList<ListUser>());

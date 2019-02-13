@@ -1,6 +1,7 @@
 package com.tylerkv.application.listitems;
 
 import com.tylerkv.application.baseobjects.ListItem;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListType;
 
 import java.time.LocalDateTime;
@@ -14,45 +15,41 @@ public class ToDoListItem extends ListItem {
 
     // Adding in two more constructors because forgot that deadline is optional
 
-    public ToDoListItem(String itemName, String description){
-        super(itemName, description, ListType.TODO);
+    public ToDoListItem(ItemDetails itemDetails){
+        super(itemDetails.getItemName(), itemDetails.getItemDescription(), ListType.TODO);
     }
 
-    public ToDoListItem(String itemName, String description, double itemPriority) {
-        super(itemName, description, ListType.TODO);
+    public ToDoListItem(ItemDetails itemDetails, double itemPriority) {
+        super(itemDetails.getItemName(), itemDetails.getItemDescription(), ListType.TODO);
         this.setItemPriority(itemPriority);
     }
-
-    // No options taken
-    public ToDoListItem(String itemName, String description
+    
+    public ToDoListItem(ItemDetails itemDetails
             , LocalDateTime completionRangeEndDate) {
-        super(itemName, description, ListType.TODO);
+        super(itemDetails.getItemName(), itemDetails.getItemDescription(), ListType.TODO);
         this.setCompletionRangeEndDate(completionRangeEndDate);
         this.setItemPriority(0);
     }
 
-    // Optional range
-    public ToDoListItem(String itemName, String description
+    public ToDoListItem(ItemDetails itemDetails
             , LocalDateTime completionRangeStartDate, LocalDateTime completionRangeEndDate) {
-        super(itemName, description, ListType.TODO);
+        super(itemDetails.getItemName(), itemDetails.getItemDescription(), ListType.TODO);
         this.setCompletionRangeEndDate(completionRangeEndDate);
         this.setCompletionRangeStartDate(completionRangeStartDate);
         this.setItemPriority(0);
     }
 
-    // Optional priority
-    public ToDoListItem(String itemName, String description
+    public ToDoListItem(ItemDetails itemDetails
             , LocalDateTime completionRangeEndDate, double itemPriority) {
-        super(itemName, description, ListType.TODO);
+        super(itemDetails.getItemName(), itemDetails.getItemDescription(), ListType.TODO);
         this.setCompletionRangeEndDate(completionRangeEndDate);
         this.setItemPriority(itemPriority);
     }
 
-    // Optional priority and range
-    public ToDoListItem(String itemName, String description
+    public ToDoListItem(ItemDetails itemDetails
             , LocalDateTime completionRangeStartDate
             , LocalDateTime completionRangeEndDate, double itemPriority) {
-        super(itemName, description, ListType.TODO);
+        super(itemDetails.getItemName(), itemDetails.getItemDescription(), ListType.TODO);
         this.setCompletionRangeStartDate(completionRangeStartDate);
         this.setCompletionRangeEndDate(completionRangeEndDate);
         this.setItemPriority(itemPriority);

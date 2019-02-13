@@ -2,6 +2,7 @@ package tests;
 
 import com.tylerkv.application.listitems.GoalListItem;
 import com.tylerkv.application.lists.GoalList;
+import com.tylerkv.application.utilities.ItemDetails;
 import com.tylerkv.application.utilities.ListUser;
 
 import java.time.LocalDateTime;
@@ -14,15 +15,15 @@ public class GoalListItemTests {
         testGoalListItemMethods();
     }
     public static void testGoalListItemConstructors() {
-        GoalListItem testItem1 = new GoalListItem("item1", "desc"
+        GoalListItem testItem1 = new GoalListItem(new ItemDetails("item1", "desc")
                 , LocalDateTime.of(2019, 1, 1, 0 , 0));
     }
     public static void testGoalListItemGettersAndSetters() {
-        GoalListItem testItem1 = new GoalListItem("item1", "desc"
+        GoalListItem testItem1 = new GoalListItem(new ItemDetails("item1", "desc")
                 , LocalDateTime.of(2019, 1, 1, 0 , 0));
-        GoalListItem testItem2 = new GoalListItem("item2", "desc"
+        GoalListItem testItem2 = new GoalListItem(new ItemDetails("item2", "desc")
                 , LocalDateTime.of(2019, 1, 1, 0 , 0));
-        GoalListItem testItem3 = new GoalListItem("item3", "desc"
+        GoalListItem testItem3 = new GoalListItem(new ItemDetails("item3", "desc")
                 , LocalDateTime.of(2019, 1, 1, 0 , 0));
 
         testItem1.setParent(testItem2);
@@ -39,11 +40,11 @@ public class GoalListItemTests {
         ListUser testUser = new ListUser("testUser", "pass");
         GoalList testList = new GoalList("test1", testUser);
 
-        GoalListItem testItem1 = new GoalListItem("item1", "desc"
+        GoalListItem testItem1 = new GoalListItem(new ItemDetails("item1", "desc")
                 , LocalDateTime.of(2019, 1, 1, 0 , 0));
-        GoalListItem testItem2 = new GoalListItem("item2", "desc"
+        GoalListItem testItem2 = new GoalListItem(new ItemDetails("item2", "desc")
                 , LocalDateTime.of(2019, 1, 1, 0 , 0));
-        GoalListItem testItem3 = new GoalListItem("item3", "desc"
+        GoalListItem testItem3 = new GoalListItem(new ItemDetails("item3", "desc")
                 , LocalDateTime.of(2019, 1, 1, 0 , 0));
 
         testItem1.addChildGoal(testItem2);

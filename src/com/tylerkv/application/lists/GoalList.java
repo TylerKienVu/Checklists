@@ -86,7 +86,7 @@ public class GoalList extends List {
         return recursiveSearch(itemName, currentItem.getChildGoal(nextChild), splicedPaths);
     }
 
-    public void addItemWithChildPath(GoalListItem itemToAdd, Object[] paths) {
+    public void addGoalListItem(GoalListItem itemToAdd, Object[] paths) {
         ArrayList<ListItem> currentItemList = this.getItemList();
         for(int i = 0; i < currentItemList.size(); i++) {
             if (currentItemList.get(i).getItemName().equals(paths[0].toString())) {
@@ -98,7 +98,7 @@ public class GoalList extends List {
                 }
                 else {
                     // else, recurse until you find the right item to add the child goal to
-                    recurseToChild(itemToAdd, (GoalListItem) currentItemList.get(i), paths);
+                    recursiveAdd(itemToAdd, (GoalListItem) currentItemList.get(i), paths);
                 }
                 return;
             }
@@ -106,13 +106,13 @@ public class GoalList extends List {
         throw new IllegalArgumentException("The item path was not found");
     }
 
-    private void recurseToChild(GoalListItem itemToAdd, GoalListItem currentItem, Object[] paths) {
+    private void recursiveAdd(GoalListItem itemToAdd, GoalListItem currentItem, Object[] paths) {
         if(paths.length == 1) {
             currentItem.addChildGoal(itemToAdd);
             return;
         }
         String nextChild = paths[1].toString();
         Object[] splicedPaths = Arrays.copyOfRange(paths,1,paths.length);
-        recurseToChild(itemToAdd, currentItem.getChildGoal(nextChild), splicedPaths);
+        recursiveAdd(itemToAdd, currentItem.getChildGoal(nextChild), splicedPaths);
     }
 }
