@@ -16,6 +16,7 @@ import java.io.IOException;
 
 public class SideBarView extends JPanel {
     private JLabel profilePictureLabel;
+    private JButton homeButton;
     private JButton shoppingButton;
     private JButton todoButton;
     private JButton goalButton;
@@ -41,6 +42,11 @@ public class SideBarView extends JPanel {
 
     private void initComponents() {
         initProfilePicture();
+
+        homeButton = new JButton("Home");
+        homeButton.setActionCommand("HOME");
+        homeButton.addActionListener(new HomeClickAction());
+
         shoppingButton = new JButton("Shopping Lists");
         shoppingButton.setActionCommand("SHOP");
         shoppingButton.addActionListener(new ShopClickAction());
@@ -83,7 +89,7 @@ public class SideBarView extends JPanel {
         this.setLayout(groupLayout);
         groupLayout.setAutoCreateGaps(true);
         groupLayout.setAutoCreateContainerGaps(true);
-        groupLayout.linkSize(SwingConstants.HORIZONTAL, shoppingButton, todoButton, goalButton, teamButton);
+        groupLayout.linkSize(SwingConstants.HORIZONTAL, shoppingButton, todoButton, goalButton, teamButton, homeButton);
         this.drawLayout();
     }
 
@@ -92,6 +98,8 @@ public class SideBarView extends JPanel {
             .addComponent(profilePictureLabel)
             .addGap(50)
             .addGroup(groupLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                .addComponent(homeButton)
+                .addGap(25)
                 .addComponent(shoppingButton)
                 .addGap(25)
                 .addComponent(todoButton)
@@ -104,6 +112,8 @@ public class SideBarView extends JPanel {
         groupLayout.setVerticalGroup(groupLayout.createSequentialGroup()
             .addComponent(profilePictureLabel)
             .addGap(50)
+            .addComponent(homeButton)
+            .addGap(25)
             .addComponent(shoppingButton)
             .addGap(25)
             .addComponent(todoButton)
@@ -138,6 +148,13 @@ public class SideBarView extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             parentFrame.showPanel("TEAM");
+        }
+    }
+
+    private class HomeClickAction extends AbstractAction {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            parentFrame.showPanel("HOME");
         }
     }
 }

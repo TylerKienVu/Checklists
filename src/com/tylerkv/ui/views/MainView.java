@@ -16,6 +16,7 @@ public class MainView extends JPanel {
     private ToDoListView toDoListView;
     private GoalListView goalListView;
     private TeamListView teamListView;
+    private HomeView homeView;
     private ListDriver listDriver;
 
     public MainView(JFrame parentFrame, ListDriver listDriver) {
@@ -36,11 +37,13 @@ public class MainView extends JPanel {
 
     private void initPanels() {
         // Init list details panels here
+        homeView = new HomeView(this, listDriver);
         shoppingListView = new ShoppingListView(this, listDriver);
         toDoListView = new ToDoListView(this, listDriver);
         goalListView = new GoalListView(this, listDriver);
         teamListView = new TeamListView(this, listDriver);
 
+        this.add(homeView, "HOME");
         this.add(shoppingListView, "SHOPPING");
         this.add(toDoListView, "TODO");
         this.add(goalListView, "GOAL");
@@ -49,6 +52,12 @@ public class MainView extends JPanel {
 
     public void showPanel(String panelName) {
         cardLayout.show(this, panelName);
+
+        // refresh chart
+        if (panelName == "HOME") {
+            homeView.updateChart();
+        }
+
         parentFrame.pack();
     }
 

@@ -6,9 +6,18 @@ import com.tylerkv.application.lists.GoalList;
 import com.tylerkv.application.lists.ShoppingList;
 import com.tylerkv.application.lists.TeamList;
 import com.tylerkv.application.lists.ToDoList;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.NumberTickUnit;
+import org.jfree.data.xy.*;
 
+import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 // Follows Singleton pattern
@@ -21,6 +30,8 @@ public class ListDriver {
     private ListUser owner;
     private Map<ListType, Boolean> enabledLists;
     private static ListDriver listDriverInstance;
+    private ArrayList<LocalDateTime> history;
+    private JFreeChart chart;
 
     private ListDriver(ListUser owner) {
         this.setOwner(owner);
@@ -28,6 +39,7 @@ public class ListDriver {
         this.setToDoLists(new ArrayList<ToDoList>());
         this.setTeamLists(new ArrayList<TeamList>());
         this.initializeEnabledLists();
+        this.setHistory(new ArrayList<LocalDateTime>());
     }
 
     public static ListDriver getInstance(ListUser owner) {
@@ -86,6 +98,15 @@ public class ListDriver {
     private void setEnabledLists(Map<ListType, Boolean> enabledLists) {
         this.enabledLists = enabledLists;
     }
+
+    private ArrayList<LocalDateTime> getHistory() {
+        return history;
+    }
+
+    private void setHistory(ArrayList<LocalDateTime> history) {
+        this.history = history;
+    }
+
     // METHODS
 
     public void addShoppingList(String listName) throws IllegalArgumentException {
@@ -221,6 +242,13 @@ public class ListDriver {
     public void toggleItemComplete(String listName, ListType listType, String itemToToggle) {
         enabledListCheck(listType);
         List targetList = this.getList(listName, listType);
+
+        if (listType == ListType.TODO || listType == ListType.GOAL) {
+            if (targetList.getItem(itemToToggle).getStatus() == Status.INCOMPLETE) {
+                this.addTimestampToHistory(LocalDateTime.now());
+            }
+        }
+
         targetList.toggleItemComplete(itemToToggle);
     }
 
@@ -259,5 +287,74 @@ public class ListDriver {
             }
         }
         throw new IllegalArgumentException("The list (" + listName + ") does not exist");
+    }
+
+    public void addTimestampToHistory(LocalDateTime timestamp) {
+        this.getHistory().add(timestamp);
+    }
+
+    public ChartPanel createChart() {
+        IntervalXYDataset dataset = this.createDataset();
+        chart = ChartFactory.createXYBarChart("History Chart", "Seconds Since Completed", false, "Items Completed", dataset);
+
+        NumberAxis domain = (NumberAxis) chart.getXYPlot().getDomainAxis();
+        NumberAxis range = (NumberAxis) chart.getXYPlot().getRangeAxis();
+
+        domain.setTickUnit(new NumberTickUnit(1));
+        domain.setRange(0, 30);
+
+        range.setTickUnit(new NumberTickUnit(1));
+        range.setRange(0,3);
+
+        ChartPanel panel = new ChartPanel(chart);
+        return panel;
+    }
+
+    public void updateChart() {
+        chart.getXYPlot().setDataset(this.createDataset());
+        this.cleanOldHistory();
+    }
+
+    // The range for the chart is 0 -> 30, so if the timestamp is out of range, remove
+    private void cleanOldHistory() {
+        Iterator historyIter = this.getHistory().iterator();
+        while(historyIter.hasNext()) {
+            LocalDateTime current = (LocalDateTime) historyIter.next();
+            if (ChronoUnit.SECONDS.between(current, LocalDateTime.now()) > 30) {
+                historyIter.remove();
+            }
+        }
+    }
+
+    private IntervalXYDataset createDataset() {
+        HashMap historyMap = this.createHistoryDatasetMap();
+        Iterator historyMapIter = historyMap.entrySet().iterator();
+
+        XYSeries series1 = new XYSeries("Completed Item History");
+
+        while (historyMapIter.hasNext()) {
+            Map.Entry pair = (Map.Entry)historyMapIter.next();
+            series1.add((double) pair.getKey(), Double.valueOf((int)pair.getValue()));
+            historyMapIter.remove();
+        }
+
+        IntervalXYDataset dataset = new XYBarDataset(new XYSeriesCollection(series1), 1);
+        return dataset;
+    }
+
+    private HashMap<Double, Integer> createHistoryDatasetMap() {
+        HashMap<Double, Integer> historyMap = new HashMap<Double, Integer>();
+        for(LocalDateTime timestamp : this.getHistory()) {
+            double secondsSinceNow = ChronoUnit.SECONDS.between(timestamp, LocalDateTime.now());
+            if (historyMap.containsKey(secondsSinceNow)) {
+                int oldValue = historyMap.get(secondsSinceNow);
+                historyMap.replace(secondsSinceNow, oldValue + 1);
+            }
+            else {
+                historyMap.put(secondsSinceNow, 1);
+            }
+        }
+
+        return historyMap;
     }
 }
